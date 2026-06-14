@@ -74,8 +74,14 @@
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
   .drop-zone h3{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:6px}
   .drop-zone p{color:var(--t2);font-size:.88rem;margin-bottom:20px}
-  .browse-btn{display:inline-flex;align-items:center;gap:9px;padding:12px 30px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#e85d04);color:#fff;font-size:.92rem;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 32px rgba(255,124,58,.4);transition:all .25s}
+
+  /* ── UPLOAD BUTTONS ROW ─────────────────────────────────── */
+  .upload-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .browse-btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#e85d04);color:#fff;font-size:.92rem;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 32px rgba(255,124,58,.4);transition:all .25s}
   .browse-btn:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(255,124,58,.55)}
+  .camera-btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--text);font-size:.92rem;font-weight:700;border:1px solid var(--bd2);cursor:pointer;transition:all .25s;backdrop-filter:blur(8px)}
+  .camera-btn:hover{background:rgba(255,124,58,.12);border-color:var(--accent);color:var(--al);transform:translateY(-3px);box-shadow:0 10px 32px rgba(255,124,58,.2)}
+
   .preview-card{display:none;width:100%;max-width:520px;background:var(--s1);border:1px solid var(--bd2);border-radius:22px;overflow:hidden;animation:scaleIn .4s ease}
   .preview-card.show{display:block}
   @keyframes scaleIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
@@ -96,6 +102,158 @@
   .btn-change:hover{background:var(--s3);color:var(--text)}
   .trust-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px;animation:fadeUp 1s ease both}
   .trust-pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid var(--bd);padding:6px 14px;border-radius:999px;font-size:11px;color:var(--t2)}
+
+  /* ═══════════════════════════════════════════════════════════
+     CAMERA MODAL
+  ═══════════════════════════════════════════════════════════ */
+  #cam-modal{
+    position:fixed;inset:0;z-index:9800;
+    display:flex;align-items:flex-end;justify-content:center;
+    pointer-events:none;opacity:0;
+    transition:opacity .3s ease;
+  }
+  @media(min-width:600px){#cam-modal{align-items:center}}
+  #cam-modal.open{pointer-events:all;opacity:1}
+  #cam-modal .cam-bg{position:absolute;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(12px)}
+  #cam-sheet{
+    position:relative;z-index:1;
+    width:100%;max-width:600px;
+    background:var(--s1);
+    border-radius:24px 24px 0 0;
+    max-height:94dvh;
+    display:flex;flex-direction:column;
+    transform:translateY(100%);
+    transition:transform .42s var(--ease);
+    overflow:hidden;
+  }
+  @media(min-width:600px){
+    #cam-sheet{border-radius:24px;max-height:90dvh;width:calc(100% - 48px)}
+  }
+  #cam-modal.open #cam-sheet{transform:translateY(0)}
+
+  .cam-hdr{
+    padding:16px 20px;
+    display:flex;align-items:center;justify-content:space-between;
+    background:rgba(255,255,255,.03);
+    border-bottom:1px solid var(--bd);
+    flex-shrink:0;
+  }
+  .cam-hdr-left{display:flex;align-items:center;gap:10px}
+  .cam-hdr-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--purple));display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+  .cam-hdr h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800}
+  .cam-hdr p{font-size:.72rem;color:var(--t2);margin-top:1px}
+  .cam-close{background:var(--s2);border:1px solid var(--bd);color:var(--t2);width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .2s;flex-shrink:0}
+  .cam-close:hover{background:var(--s3);color:var(--text)}
+
+  /* Viewfinder */
+  .cam-view{
+    position:relative;background:#000;
+    flex:1;min-height:0;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  #cam-video{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+    transform:scaleX(1); /* will flip for front cam */
+  }
+  #cam-canvas{display:none}
+
+  /* Corner frame overlay */
+  .cam-frame{
+    position:absolute;inset:16px;
+    pointer-events:none;
+  }
+  .cam-frame::before,.cam-frame::after,
+  .cam-frame-b::before,.cam-frame-b::after{
+    content:'';position:absolute;width:28px;height:28px;
+    border-color:var(--accent);border-style:solid;opacity:.8;
+  }
+  .cam-frame::before{top:0;left:0;border-width:3px 0 0 3px;border-radius:4px 0 0 0}
+  .cam-frame::after{top:0;right:0;border-width:3px 3px 0 0;border-radius:0 4px 0 0}
+  .cam-frame-b{position:absolute;inset:16px;pointer-events:none}
+  .cam-frame-b::before{bottom:0;left:0;border-width:0 0 3px 3px;border-radius:0 0 0 4px}
+  .cam-frame-b::after{bottom:0;right:0;border-width:0 3px 3px 0;border-radius:0 0 4px 0}
+
+  /* Scan line animation inside viewfinder */
+  .cam-scan{
+    position:absolute;left:5%;right:5%;height:2px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    box-shadow:0 0 10px var(--accent);
+    animation:camScan 2.4s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes camScan{0%{top:15%;opacity:1}100%{top:85%;opacity:0}}
+
+  /* Status bar inside viewfinder */
+  .cam-status{
+    position:absolute;top:12px;left:50%;transform:translateX(-50%);
+    background:rgba(7,9,15,.75);backdrop-filter:blur(8px);
+    border:1px solid var(--bd2);border-radius:999px;
+    padding:5px 14px;font-size:.72rem;color:var(--t2);
+    white-space:nowrap;pointer-events:none;
+    display:flex;align-items:center;gap:6px;
+  }
+  .cam-status .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+  .cam-status.err .dot{background:var(--red);animation:none}
+
+  /* Error state inside viewfinder */
+  .cam-error{
+    display:none;flex-direction:column;align-items:center;justify-content:center;
+    gap:12px;padding:32px 24px;text-align:center;
+  }
+  .cam-error.show{display:flex}
+  .cam-error-icon{font-size:40px;opacity:.5}
+  .cam-error h4{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--t2)}
+  .cam-error p{font-size:.82rem;color:var(--muted);max-width:280px;line-height:1.6}
+
+  /* Controls bar */
+  .cam-controls{
+    padding:18px 20px;
+    display:flex;align-items:center;justify-content:space-between;
+    background:rgba(7,9,15,.6);backdrop-filter:blur(12px);
+    border-top:1px solid var(--bd);
+    flex-shrink:0;gap:12px;
+  }
+
+  /* Switch cam button */
+  .cam-flip{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--s2);border:1px solid var(--bd2);
+    color:var(--t2);font-size:20px;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:all .2s;flex-shrink:0;
+  }
+  .cam-flip:hover{background:var(--s3);color:var(--text);border-color:var(--accent)}
+  .cam-flip:active{transform:scale(.92) rotate(180deg)}
+
+  /* Shutter button */
+  .cam-shutter{
+    width:68px;height:68px;border-radius:50%;
+    background:transparent;border:3px solid var(--accent);
+    cursor:pointer;transition:all .2s;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;position:relative;
+  }
+  .cam-shutter::after{
+    content:'';width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(135deg,var(--accent),#e85d04);
+    transition:all .2s;
+    box-shadow:0 0 20px rgba(255,124,58,.5);
+  }
+  .cam-shutter:hover::after{transform:scale(1.08);box-shadow:0 0 30px rgba(255,124,58,.7)}
+  .cam-shutter:active::after{transform:scale(.9)}
+  .cam-shutter:disabled{opacity:.35;cursor:not-allowed}
+  .cam-shutter:disabled::after{box-shadow:none}
+
+  /* Retake / use buttons (shown after capture) */
+  .cam-post{display:none;gap:10px}
+  .cam-post.show{display:flex}
+  .btn-retake{padding:12px 20px;border-radius:999px;background:var(--s2);border:1px solid var(--bd2);color:var(--t2);font-size:.85rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s}
+  .btn-retake:hover{background:var(--s3);color:var(--text)}
+  .btn-use{display:flex;align-items:center;gap:7px;padding:12px 24px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#e85d04);color:#fff;font-size:.85rem;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(255,124,58,.4);white-space:nowrap;transition:all .2s}
+  .btn-use:hover{transform:scale(1.03)}
 
   /* ═══════════════════════════════════════════════════════════
      PAGE 2 — INGREDIENTS
@@ -139,12 +297,8 @@
   .dtab{padding:13px 18px;font-size:.84rem;font-weight:600;color:var(--t2);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;flex-shrink:0}
   .dtab:hover{color:var(--text)}
   .dtab.active{color:var(--accent);border-bottom-color:var(--accent)}
-
-  /* Mobile: stack | Desktop: 2 col */
   .recipe-cols{display:flex;flex-direction:column}
   @media(min-width:900px){.recipe-cols{display:grid;grid-template-columns:1fr 400px;min-height:calc(100dvh - 120px)}}
-
-  /* Left - steps */
   .recipe-left{padding:24px 18px 40px}
   @media(min-width:500px){.recipe-left{padding:32px 28px 48px}}
   @media(min-width:900px){.recipe-left{padding:36px 40px 48px 32px;overflow-y:auto}}
@@ -166,68 +320,28 @@
   .snum{width:34px;height:34px;border-radius:50%;flex-shrink:0;background:var(--s2);border:2px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--accent);z-index:1;transition:all .3s}
   .step-row:hover .snum{background:rgba(255,124,58,.15);border-color:var(--accent)}
   .stxt{padding:5px 0 24px;font-size:.88rem;color:#c2cbdf;line-height:1.75;flex:1}
-
-  /* ─── NUTRITION PANEL (right col) ─────────────────────────── */
   .recipe-right{background:var(--s1);padding:24px 18px 40px}
   @media(min-width:500px){.recipe-right{padding:28px 22px 40px}}
   @media(min-width:900px){.recipe-right{border-left:1px solid var(--bd);padding:28px 24px 48px;overflow-y:auto}}
   .rlbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:14px}
   .rdiv{height:1px;background:var(--bd);margin:20px 0}
-
-  /* ── CALORIE CARD ───────────────────────────────────────── */
-  .cal-card{
-    background:linear-gradient(145deg,#0b1020,#111827);
-    border:1px solid rgba(255,124,58,.18);
-    border-radius:20px;
-    padding:24px 22px;
-    margin-bottom:14px;
-    position:relative;
-    overflow:hidden;
-    transition:box-shadow .3s;
-  }
+  .cal-card{background:linear-gradient(145deg,#0b1020,#111827);border:1px solid rgba(255,124,58,.18);border-radius:20px;padding:24px 22px;margin-bottom:14px;position:relative;overflow:hidden;transition:box-shadow .3s}
   .cal-card:hover{box-shadow:0 0 40px rgba(255,124,58,.12)}
-  .cal-card::before{
-    content:'';
-    position:absolute;top:-40px;right:-40px;
-    width:140px;height:140px;border-radius:50%;
-    background:radial-gradient(circle,rgba(255,124,58,.18),transparent 65%);
-    pointer-events:none;
-  }
+  .cal-card::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(255,124,58,.18),transparent 65%);pointer-events:none}
   .cal-card-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
   .cal-card-ico{font-size:20px;line-height:1}
   .cal-card-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;color:rgba(255,124,58,.7)}
-  .cal-card-val{
-    font-family:'Syne',sans-serif;
-    font-size:2.6rem;font-weight:800;line-height:1;
-    color:#fff;
-    text-shadow:0 0 32px rgba(255,124,58,.55),0 0 60px rgba(255,124,58,.25);
-    margin-bottom:6px;
-  }
+  .cal-card-val{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;line-height:1;color:#fff;text-shadow:0 0 32px rgba(255,124,58,.55),0 0 60px rgba(255,124,58,.25);margin-bottom:6px}
   .cal-card-val span{font-size:1.1rem;color:rgba(255,124,58,.8);font-weight:600;margin-left:4px}
   .cal-card-sub{font-size:.75rem;color:var(--t2)}
-
-  /* ── MACRO STACK CARDS ───────────────────────────────────── */
   .macro-stack-cards{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-  .msc{
-    background:linear-gradient(145deg,#0d1117,#161c26);
-    border:1px solid var(--bd);
-    border-left:4px solid;
-    border-radius:16px;
-    padding:16px 20px;
-    display:flex;align-items:center;justify-content:space-between;
-    transition:transform .2s,box-shadow .2s;
-    cursor:default;
-  }
+  .msc{background:linear-gradient(145deg,#0d1117,#161c26);border:1px solid var(--bd);border-left:4px solid;border-radius:16px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;transition:transform .2s,box-shadow .2s;cursor:default}
   .msc:hover{transform:translateX(4px);box-shadow:0 6px 28px rgba(0,0,0,.3)}
   .msc.prot{border-left-color:var(--green)}
   .msc.fat{border-left-color:var(--red)}
   .msc.carb{border-left-color:var(--blue)}
   .msc-left{display:flex;align-items:center;gap:12px}
-  .msc-ico{
-    width:40px;height:40px;border-radius:12px;
-    display:flex;align-items:center;justify-content:center;
-    font-size:19px;flex-shrink:0;
-  }
+  .msc-ico{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
   .msc.prot .msc-ico{background:rgba(16,217,140,.1)}
   .msc.fat  .msc-ico{background:rgba(255,79,109,.1)}
   .msc.carb .msc-ico{background:rgba(77,166,255,.1)}
@@ -238,64 +352,29 @@
   .msc.fat  .msc-val{color:var(--red)}
   .msc.carb .msc-val{color:var(--blue)}
   .msc-unit{font-size:.7rem;font-weight:500;opacity:.7}
-
-  /* Vitamins */
   .vit-section{margin-bottom:4px}
   .vit-list{display:flex;flex-wrap:wrap;gap:7px}
   .vtag{padding:5px 12px;border-radius:999px;font-size:.7rem;font-weight:600;background:rgba(176,110,255,.1);border:1px solid rgba(176,110,255,.22);color:#d4b0ff;cursor:default}
-
-  /* Detail button */
-  .detail-btn{
-    width:100%;margin-top:20px;
-    display:flex;align-items:center;justify-content:center;gap:9px;
-    padding:13px;border-radius:var(--r2);
-    background:var(--s2);border:1px solid var(--bd2);
-    color:var(--text);font-size:.88rem;font-weight:600;
-    cursor:pointer;transition:all .25s;
-  }
+  .detail-btn{width:100%;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:9px;padding:13px;border-radius:var(--r2);background:var(--s2);border:1px solid var(--bd2);color:var(--text);font-size:.88rem;font-weight:600;cursor:pointer;transition:all .25s}
   .detail-btn:hover{background:rgba(255,124,58,.1);border-color:var(--accent);color:var(--accent)}
   .detail-btn .arrow{transition:transform .2s;font-size:12px}
 
   /* ── DETAIL MODAL ────────────────────────────────────────── */
-  #detail-modal{
-    position:fixed;inset:0;z-index:8000;
-    display:flex;align-items:flex-end;justify-content:center;
-    pointer-events:none;opacity:0;
-    transition:opacity .3s ease;
-  }
+  #detail-modal{position:fixed;inset:0;z-index:8000;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s ease}
   @media(min-width:600px){#detail-modal{align-items:center}}
   #detail-modal.open{pointer-events:all;opacity:1}
   #detail-modal .mbg{position:absolute;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px)}
-  #detail-sheet{
-    position:relative;z-index:1;
-    width:100%;max-width:680px;
-    background:var(--s1);
-    border-radius:24px 24px 0 0;
-    max-height:88dvh;
-    display:flex;flex-direction:column;
-    transform:translateY(100%);
-    transition:transform .42s var(--ease);
-  }
-  @media(min-width:600px){
-    #detail-sheet{border-radius:24px;max-height:85dvh;width:calc(100% - 48px)}
-  }
+  #detail-sheet{position:relative;z-index:1;width:100%;max-width:680px;background:var(--s1);border-radius:24px 24px 0 0;max-height:88dvh;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .42s var(--ease)}
+  @media(min-width:600px){#detail-sheet{border-radius:24px;max-height:85dvh;width:calc(100% - 48px)}}
   #detail-modal.open #detail-sheet{transform:translateY(0)}
-  .dsheet-hdr{
-    padding:18px 24px 16px;border-bottom:1px solid var(--bd);
-    display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
-  }
+  .dsheet-hdr{padding:18px 24px 16px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
   .dsheet-hdr h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
   .dsheet-hdr h3 span{color:var(--accent)}
   .dsheet-close{background:var(--s2);border:1px solid var(--bd);color:var(--t2);width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .2s}
   .dsheet-close:hover{background:var(--s3);color:var(--text)}
   .dsheet-body{overflow-y:auto;padding:20px 18px 28px;flex:1}
   @media(min-width:500px){.dsheet-body{padding:20px 24px 28px}}
-
-  /* Per-ingredient cards in modal */
-  .ing-card{
-    background:var(--s2);border:1px solid var(--bd);border-radius:14px;
-    padding:16px;margin-bottom:14px;transition:border-color .2s;
-  }
+  .ing-card{background:var(--s2);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:14px;transition:border-color .2s}
   .ing-card:hover{border-color:var(--bd2)}
   .ing-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px;flex-wrap:wrap}
   .ing-card-name{font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:8px}
@@ -403,14 +482,23 @@
       <h1 class="p1-h1">Turn Your Fridge<br/>Into Gourmet</h1>
       <p class="p1-sub">Upload a food photo, let AI detect every ingredient, then get personalized recipes with full nutrition science.</p>
 
+      <!-- DROP ZONE -->
       <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-inp').click()">
         <span class="dico">📸</span>
         <h3>Drop your food photo here</h3>
-        <p>Supports JPG & PNG — drag & drop or browse</p>
-        <button class="browse-btn" onclick="event.stopPropagation();document.getElementById('file-inp').click()">✦ Choose Photo</button>
+        <p>Supports JPG & PNG — drag & drop, browse, or use your camera</p>
+        <div class="upload-btns" onclick="event.stopPropagation()">
+          <button class="browse-btn" onclick="document.getElementById('file-inp').click()">✦ Choose Photo</button>
+          <button class="camera-btn" id="open-cam-btn" onclick="openCamera()">📷 Take Photo</button>
+        </div>
       </div>
-      <input type="file" id="file-inp" accept="image/*" hidden/>
 
+      <!-- hidden file inputs -->
+      <input type="file" id="file-inp" accept="image/*" hidden/>
+      <!-- mobile-only: native camera capture fallback -->
+      <input type="file" id="cam-inp" accept="image/*" capture="environment" hidden/>
+
+      <!-- PREVIEW CARD -->
       <div class="preview-card" id="preview-card">
         <div class="prev-top">
           <img id="prev-img" src="" alt=""/>
@@ -489,6 +577,70 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
+     CAMERA MODAL
+══════════════════════════════════════════════════════════ -->
+<div id="cam-modal">
+  <div class="cam-bg" onclick="closeCamera()"></div>
+  <div id="cam-sheet">
+
+    <!-- Header -->
+    <div class="cam-hdr">
+      <div class="cam-hdr-left">
+        <div class="cam-hdr-icon">📷</div>
+        <div>
+          <h3>Take a Photo</h3>
+          <p>Point your camera at the food</p>
+        </div>
+      </div>
+      <button class="cam-close" onclick="closeCamera()">✕</button>
+    </div>
+
+    <!-- Viewfinder -->
+    <div class="cam-view" id="cam-view">
+      <video id="cam-video" autoplay playsinline muted></video>
+      <canvas id="cam-canvas"></canvas>
+
+      <!-- Corner frame -->
+      <div class="cam-frame"></div>
+      <div class="cam-frame-b"></div>
+      <!-- Scan line -->
+      <div class="cam-scan" id="cam-scan"></div>
+
+      <!-- Status pill -->
+      <div class="cam-status" id="cam-status">
+        <span class="dot"></span><span id="cam-status-txt">Starting camera…</span>
+      </div>
+
+      <!-- Error state -->
+      <div class="cam-error" id="cam-error">
+        <div class="cam-error-icon">🚫</div>
+        <h4>Camera not available</h4>
+        <p id="cam-error-msg">Could not access your camera. Please allow camera permission or use "Choose Photo" instead.</p>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="cam-controls">
+      <!-- Flip camera -->
+      <button class="cam-flip" id="cam-flip-btn" onclick="flipCamera()" title="Switch camera">🔄</button>
+
+      <!-- Shutter -->
+      <button class="cam-shutter" id="cam-shutter-btn" onclick="capturePhoto()" disabled title="Take photo"></button>
+
+      <!-- Post-capture: retake / use -->
+      <div class="cam-post" id="cam-post">
+        <button class="btn-retake" onclick="retakePhoto()">↩ Retake</button>
+        <button class="btn-use" onclick="usePhoto()">✦ Use Photo</button>
+      </div>
+
+      <!-- Spacer to balance layout when post buttons hidden -->
+      <div id="cam-spacer" style="width:44px;flex-shrink:0"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
      DETAIL NUTRITION MODAL
 ══════════════════════════════════════════════════════════ -->
 <div id="detail-modal">
@@ -502,16 +654,12 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     CHAT FAB
-══════════════════════════════════════════════════════════ -->
+<!-- CHAT FAB -->
 <button id="chat-fab" onclick="openChat()">
   👨‍🍳<span class="fab-b">AI</span>
 </button>
 
-<!-- ══════════════════════════════════════════════════════════
-     CHAT PANEL
-══════════════════════════════════════════════════════════ -->
+<!-- CHAT PANEL -->
 <div id="chat-overlay">
   <div class="chat-back" onclick="closeChat()"></div>
   <div id="chat-drawer">
@@ -562,8 +710,9 @@
 const API = window.location.hostname === 'localhost'
   ? 'http://localhost:8000'
   : 'https://food-lens-ai.onrender.com';
+
 let uploadedFile = null;
-let ingState     = {};    // name → bool
+let ingState     = {};
 let recipesData  = [];
 let activeDish   = 0;
 
@@ -572,9 +721,9 @@ let activeDish   = 0;
 ═══════════════════════════════════════════════════════════════ */
 const PO = ['p1','p2','p3'];
 function navTo(tid, step) {
-  const cur  = document.querySelector('.page.active');
-  const nxt  = document.getElementById(tid);
-  const fwd  = PO.indexOf(tid) > PO.indexOf(cur.id);
+  const cur = document.querySelector('.page.active');
+  const nxt = document.getElementById(tid);
+  const fwd = PO.indexOf(tid) > PO.indexOf(cur.id);
   nxt.style.cssText = `transition:none;transform:translateX(${fwd?'100%':'-5%'});visibility:visible`;
   nxt.offsetHeight;
   const t = 'transform .52s cubic-bezier(0.76,0,0.24,1)';
@@ -592,50 +741,272 @@ function navTo(tid, step) {
    TOAST
 ═══════════════════════════════════════════════════════════════ */
 function toast(msg, type='i') {
-  const el=document.getElementById('toast');
-  el.textContent=msg; el.className=`show ${type}`;
-  clearTimeout(toast._t); toast._t=setTimeout(()=>el.className='',3200);
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = `show ${type}`;
+  clearTimeout(toast._t); toast._t = setTimeout(()=>el.className='', 3200);
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   FILE UPLOAD
+   FILE UPLOAD (gallery / drag-drop)
 ═══════════════════════════════════════════════════════════════ */
-const dz=document.getElementById('drop-zone');
-dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('drag-over')});
-dz.addEventListener('dragleave',()=>dz.classList.remove('drag-over'));
-dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('drag-over');if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0])});
-document.getElementById('file-inp').addEventListener('change',e=>{if(e.target.files[0])handleFile(e.target.files[0])});
+const dz = document.getElementById('drop-zone');
+dz.addEventListener('dragover', e=>{e.preventDefault(); dz.classList.add('drag-over')});
+dz.addEventListener('dragleave', ()=>dz.classList.remove('drag-over'));
+dz.addEventListener('drop', e=>{
+  e.preventDefault(); dz.classList.remove('drag-over');
+  if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+});
+document.getElementById('file-inp').addEventListener('change', e=>{
+  if(e.target.files[0]) handleFile(e.target.files[0]);
+});
+// mobile-only cam-inp fallback listener
+document.getElementById('cam-inp').addEventListener('change', e=>{
+  if(e.target.files[0]) handleFile(e.target.files[0]);
+});
 
 function handleFile(f) {
-  if(!['image/jpeg','image/jpg','image/png'].includes(f.type)){toast('Only JPG/PNG images supported.','e');return}
-  uploadedFile=f;
-  const r=new FileReader();
-  r.onload=ev=>{
-    document.getElementById('prev-img').src=ev.target.result;
-    document.getElementById('prev-name').textContent=f.name;
-    document.getElementById('prev-size').textContent=(f.size/1024).toFixed(1)+' KB';
-    dz.style.display='none';
+  if(!['image/jpeg','image/jpg','image/png'].includes(f.type)){
+    toast('Only JPG/PNG images supported.','e'); return;
+  }
+  uploadedFile = f;
+  const r = new FileReader();
+  r.onload = ev => {
+    document.getElementById('prev-img').src = ev.target.result;
+    document.getElementById('prev-name').textContent = f.name;
+    document.getElementById('prev-size').textContent = (f.size/1024).toFixed(1)+' KB';
+    dz.style.display = 'none';
     document.getElementById('preview-card').classList.add('show');
   };
   r.readAsDataURL(f);
 }
-function resetUpload(){uploadedFile=null;document.getElementById('file-inp').value='';document.getElementById('preview-card').classList.remove('show');dz.style.display=''}
+
+function resetUpload() {
+  uploadedFile = null;
+  document.getElementById('file-inp').value = '';
+  document.getElementById('cam-inp').value = '';
+  document.getElementById('preview-card').classList.remove('show');
+  dz.style.display = '';
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CAMERA — detect capability & route correctly
+═══════════════════════════════════════════════════════════════ */
+// True if the browser supports getUserMedia (all modern browsers do)
+const hasGetUserMedia = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+
+function openCamera() {
+  if (hasGetUserMedia) {
+    // Full in-app camera modal
+    openCameraModal();
+  } else {
+    // Fallback: trigger native file picker with capture attribute (works on Android/iOS as native cam)
+    document.getElementById('cam-inp').click();
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CAMERA MODAL — stream, capture, flip
+═══════════════════════════════════════════════════════════════ */
+let camStream      = null;   // active MediaStream
+let facingMode     = 'environment'; // 'environment' = back, 'user' = front
+let capturedBlob   = null;   // blob after shutter press
+let camHasFront    = false;  // whether a front cam exists
+let camHasBack     = false;
+
+async function openCameraModal() {
+  document.getElementById('cam-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  await startStream();
+  // probe available cameras
+  probeDevices();
+}
+
+async function probeDevices() {
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const cams = devices.filter(d => d.kind === 'videoinput');
+    camHasFront = cams.length > 1;
+    camHasBack  = cams.length >= 1;
+    document.getElementById('cam-flip-btn').style.opacity = camHasFront ? '1' : '0.3';
+    document.getElementById('cam-flip-btn').style.pointerEvents = camHasFront ? 'auto' : 'none';
+  } catch(_) {}
+}
+
+async function startStream() {
+  // stop any existing stream first
+  stopStream();
+  resetCamUI();
+
+  const video  = document.getElementById('cam-video');
+  const status = document.getElementById('cam-status');
+  const errEl  = document.getElementById('cam-error');
+  const scan   = document.getElementById('cam-scan');
+
+  setStatus('Starting camera…', false);
+  errEl.classList.remove('show');
+  video.style.display = 'block';
+
+  try {
+    camStream = await navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: { ideal: facingMode },
+        width:  { ideal: 1920 },
+        height: { ideal: 1080 }
+      },
+      audio: false
+    });
+
+    video.srcObject = camStream;
+    // mirror front camera
+    video.style.transform = facingMode === 'user' ? 'scaleX(-1)' : 'scaleX(1)';
+    await video.play();
+
+    setStatus(facingMode === 'user' ? 'Front camera' : 'Back camera', false);
+    document.getElementById('cam-shutter-btn').disabled = false;
+    scan.style.display = 'block';
+
+  } catch(err) {
+    video.style.display = 'none';
+    scan.style.display = 'none';
+    errEl.classList.add('show');
+    setStatus('Camera error', true);
+
+    let msg = 'Could not access your camera. ';
+    if(err.name === 'NotAllowedError')  msg += 'Please allow camera permission in your browser settings.';
+    else if(err.name === 'NotFoundError') msg += 'No camera found on this device.';
+    else if(err.name === 'NotReadableError') msg += 'Camera is in use by another app.';
+    else msg += 'Please use "Choose Photo" instead.';
+    document.getElementById('cam-error-msg').textContent = msg;
+  }
+}
+
+function setStatus(txt, isErr) {
+  const el = document.getElementById('cam-status');
+  document.getElementById('cam-status-txt').textContent = txt;
+  el.classList.toggle('err', isErr);
+}
+
+function stopStream() {
+  if(camStream) {
+    camStream.getTracks().forEach(t => t.stop());
+    camStream = null;
+  }
+  const video = document.getElementById('cam-video');
+  video.srcObject = null;
+}
+
+async function flipCamera() {
+  facingMode = facingMode === 'environment' ? 'user' : 'environment';
+  await startStream();
+}
+
+function capturePhoto() {
+  const video  = document.getElementById('cam-video');
+  const canvas = document.getElementById('cam-canvas');
+  if(!camStream || video.readyState < 2) return;
+
+  // match canvas to actual video resolution
+  canvas.width  = video.videoWidth  || 1280;
+  canvas.height = video.videoHeight || 720;
+
+  const ctx = canvas.getContext('2d');
+  // mirror draw for front cam so captured image matches preview
+  if(facingMode === 'user') {
+    ctx.save();
+    ctx.translate(canvas.width, 0);
+    ctx.scale(-1, 1);
+  }
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  if(facingMode === 'user') ctx.restore();
+
+  // freeze video, show captured frame
+  video.pause();
+  document.getElementById('cam-scan').style.display = 'none';
+
+  canvas.toBlob(blob => {
+    capturedBlob = blob;
+    // show canvas preview over video
+    canvas.style.display  = 'block';
+    canvas.style.position = 'absolute';
+    canvas.style.inset    = '0';
+    canvas.style.width    = '100%';
+    canvas.style.height   = '100%';
+    canvas.style.objectFit = 'cover';
+    video.style.display   = 'none';
+
+    // switch controls: hide shutter + flip, show retake/use
+    document.getElementById('cam-shutter-btn').style.display = 'none';
+    document.getElementById('cam-flip-btn').style.display    = 'none';
+    document.getElementById('cam-spacer').style.display      = 'none';
+    document.getElementById('cam-post').classList.add('show');
+    setStatus('Photo taken — looks good?', false);
+  }, 'image/jpeg', 0.92);
+}
+
+function retakePhoto() {
+  capturedBlob = null;
+  const canvas = document.getElementById('cam-canvas');
+  canvas.style.display = 'none';
+  document.getElementById('cam-video').style.display = 'block';
+  document.getElementById('cam-video').play();
+  document.getElementById('cam-scan').style.display = 'block';
+  document.getElementById('cam-shutter-btn').style.display = '';
+  document.getElementById('cam-flip-btn').style.display    = '';
+  document.getElementById('cam-spacer').style.display      = '';
+  document.getElementById('cam-post').classList.remove('show');
+  setStatus(facingMode === 'user' ? 'Front camera' : 'Back camera', false);
+}
+
+function usePhoto() {
+  if(!capturedBlob) return;
+  // turn blob into a File so handleFile can work with it
+  const file = new File([capturedBlob], 'camera-photo.jpg', { type: 'image/jpeg' });
+  closeCamera();
+  handleFile(file);
+  toast('Photo captured!', 's');
+}
+
+function closeCamera() {
+  stopStream();
+  document.getElementById('cam-modal').classList.remove('open');
+  document.body.style.overflow = '';
+  resetCamUI();
+  capturedBlob = null;
+}
+
+function resetCamUI() {
+  const canvas = document.getElementById('cam-canvas');
+  canvas.style.display = 'none';
+  document.getElementById('cam-video').style.display    = 'block';
+  document.getElementById('cam-shutter-btn').style.display = '';
+  document.getElementById('cam-shutter-btn').disabled       = true;
+  document.getElementById('cam-flip-btn').style.display    = '';
+  document.getElementById('cam-spacer').style.display      = '';
+  document.getElementById('cam-post').classList.remove('show');
+  document.getElementById('cam-error').classList.remove('show');
+  document.getElementById('cam-scan').style.display = 'none';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && document.getElementById('cam-modal').classList.contains('open')) closeCamera();
+});
 
 /* ═══════════════════════════════════════════════════════════════
    STEP 1 → DETECT INGREDIENTS
 ═══════════════════════════════════════════════════════════════ */
 async function analyzeImage() {
-  if(!uploadedFile)return;
-  document.getElementById('analyze-btn').disabled=true;
+  if(!uploadedFile) return;
+  document.getElementById('analyze-btn').disabled = true;
   document.getElementById('detect-loader').classList.add('show');
-  const fd=new FormData(); fd.append('image',uploadedFile);
+  const fd = new FormData(); fd.append('image', uploadedFile);
   try {
-    const res=await fetch(`${API}/extract_ingredients`,{method:'POST',body:fd});
+    const res = await fetch(`${API}/extract_ingredients`, {method:'POST', body:fd});
     if(!res.ok){const e=await res.json();throw new Error(e.detail||res.statusText)}
-    const data=await res.json();
-    const ings=data.detected_ingredients||[];
+    const data = await res.json();
+    const ings = data.detected_ingredients||[];
     if(!ings.length){toast('No ingredients detected — try another image.','e');return}
-    ingState={};
+    ingState = {};
     ings.forEach(i=>ingState[i]=true);
     rebuildChips(); updateStats();
     navTo('p2',2);
@@ -648,29 +1019,29 @@ async function analyzeImage() {
    INGREDIENT CHIPS
 ═══════════════════════════════════════════════════════════════ */
 function rebuildChips(){
-  const c=document.getElementById('chips-wrap'); c.innerHTML='';
+  const c = document.getElementById('chips-wrap'); c.innerHTML='';
   Object.keys(ingState).forEach((name,i)=>{
-    const on=ingState[name];
-    const el=document.createElement('span');
-    el.className='chip'+(on?'':' off');
-    el.style.animationDelay=(i*.03)+'s';
-    el.innerHTML=`${name}<span class="chip-x">${on?'✕':'+'}</span>`;
-    el.onclick=()=>{ingState[name]=!ingState[name];rebuildChips();updateStats()};
+    const on = ingState[name];
+    const el = document.createElement('span');
+    el.className = 'chip'+(on?'':' off');
+    el.style.animationDelay = (i*.03)+'s';
+    el.innerHTML = `${name}<span class="chip-x">${on?'✕':'+'}</span>`;
+    el.onclick = ()=>{ingState[name]=!ingState[name];rebuildChips();updateStats()};
     c.appendChild(el);
   });
 }
 function updateStats(){
-  const total=Object.keys(ingState).length;
-  const sel=Object.values(ingState).filter(Boolean).length;
-  document.getElementById('st-total').textContent=total;
-  document.getElementById('st-sel').textContent=sel;
-  document.getElementById('st-rem').textContent=total-sel;
-  document.getElementById('footer-sel').textContent=sel;
-  document.getElementById('ing-count-h').textContent=`— ${total} Found`;
+  const total = Object.keys(ingState).length;
+  const sel   = Object.values(ingState).filter(Boolean).length;
+  document.getElementById('st-total').textContent = total;
+  document.getElementById('st-sel').textContent   = sel;
+  document.getElementById('st-rem').textContent   = total-sel;
+  document.getElementById('footer-sel').textContent = sel;
+  document.getElementById('ing-count-h').textContent = `— ${total} Found`;
 }
 function addIng(){
-  const f=document.getElementById('add-field');
-  const n=f.value.trim();
+  const f = document.getElementById('add-field');
+  const n = f.value.trim();
   if(!n){toast('Enter an ingredient name.','i');return}
   if(ingState.hasOwnProperty(n)){toast('Already in the list!','i');return}
   ingState[n]=true; rebuildChips(); updateStats(); f.value=''; toast(`"${n}" added!`,'s');
@@ -681,15 +1052,15 @@ function selectAll(){Object.keys(ingState).forEach(k=>ingState[k]=true);rebuildC
    STEP 2 → GENERATE RECIPES
 ═══════════════════════════════════════════════════════════════ */
 async function generateRecipes(){
-  const final=Object.keys(ingState).filter(k=>ingState[k]);
+  const final = Object.keys(ingState).filter(k=>ingState[k]);
   if(!final.length){toast('Select at least one ingredient.','e');return}
-  document.getElementById('gen-btn').disabled=true;
+  document.getElementById('gen-btn').disabled = true;
   document.getElementById('recipe-loader').classList.add('show');
   try {
-    const res=await fetch(`${API}/main_endpoint`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({final_ingredients:final})});
+    const res = await fetch(`${API}/main_endpoint`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({final_ingredients:final})});
     if(!res.ok){const e=await res.json();throw new Error(e.detail||res.statusText)}
-    const data=await res.json();
-    recipesData=data.final_results||[];
+    const data = await res.json();
+    recipesData = data.final_results||[];
     if(!recipesData.length){toast('No recipes generated — try different ingredients.','e');return}
     renderRecipes(recipesData);
     syncChatSelect(recipesData);
@@ -703,20 +1074,21 @@ async function generateRecipes(){
    RENDER PAGE 3
 ═══════════════════════════════════════════════════════════════ */
 const EM=['🍛','🥘','🍲','🥗','🍜','🍝','🫕','🥙'];
+
 function renderRecipes(results){
-  const strip=document.getElementById('dish-strip');
-  const wrap=document.getElementById('panels-wrap');
+  const strip = document.getElementById('dish-strip');
+  const wrap  = document.getElementById('panels-wrap');
   strip.innerHTML=''; wrap.innerHTML='';
   results.forEach((r,i)=>{
-    const tab=document.createElement('div');
-    tab.className='dtab'+(i===0?' active':'');
-    tab.textContent=`${EM[i%EM.length]} ${r.dish_name}`;
-    tab.onclick=()=>switchDish(i);
+    const tab = document.createElement('div');
+    tab.className = 'dtab'+(i===0?' active':'');
+    tab.textContent = `${EM[i%EM.length]} ${r.dish_name}`;
+    tab.onclick = ()=>switchDish(i);
     strip.appendChild(tab);
-    const panel=document.createElement('div');
-    panel.id=`dp-${i}`;
-    panel.style.display=i===0?'':'none';
-    panel.innerHTML=buildPanel(r,i);
+    const panel = document.createElement('div');
+    panel.id = `dp-${i}`;
+    panel.style.display = i===0?'':'none';
+    panel.innerHTML = buildPanel(r,i);
     wrap.appendChild(panel);
   });
   setTimeout(()=>{animBars(0);animRings(0)},150);
@@ -727,22 +1099,16 @@ function buildPanel(r,idx){
   const prot = parseFloat(r.overall_protein)||0;
   const fat  = parseFloat(r.overall_fats)||0;
   const carb = parseFloat(r.overall_carbohydrates)||0;
-
-  /* Recipe steps */
-  const stepsHTML=(r.full_recipe||[]).map((s,i)=>`
+  const stepsHTML = (r.full_recipe||[]).map((s,i)=>`
     <div class="step-row">
       <div class="snum">${i+1}</div>
       <div class="stxt">${s}</div>
     </div>`).join('');
-
-  /* Vitamins */
-  const vits=r.overall_vitamins||[];
-  const vitArr=Array.isArray(vits)?vits:(vits?[vits]:[]);
-  const vitHTML=vitArr.filter(Boolean).map(v=>`<span class="vtag">${v}</span>`).join('');
-
+  const vits   = r.overall_vitamins||[];
+  const vitArr = Array.isArray(vits)?vits:(vits?[vits]:[]);
+  const vitHTML = vitArr.filter(Boolean).map(v=>`<span class="vtag">${v}</span>`).join('');
   return `
   <div class="recipe-cols">
-    <!-- LEFT: Steps -->
     <div class="recipe-left">
       <div class="dish-masthead">
         <div class="dish-top-row">
@@ -759,67 +1125,40 @@ function buildPanel(r,idx){
       <div class="slbl">Step-by-Step Recipe</div>
       <div class="steps-list">${stepsHTML}</div>
     </div>
-
-    <!-- RIGHT: Nutrition -->
     <div class="recipe-right">
-
-      <!-- Calorie Card -->
       <div class="cal-card">
-        <div class="cal-card-row">
-          <span class="cal-card-ico">🔥</span>
-          <span class="cal-card-lbl">Calories</span>
-        </div>
+        <div class="cal-card-row"><span class="cal-card-ico">🔥</span><span class="cal-card-lbl">Calories</span></div>
         <div class="cal-card-val">${cal}<span>kcal</span></div>
         <div class="cal-card-sub">Per Serving</div>
       </div>
-
-      <!-- Macro Stack Cards -->
       <div class="rlbl">Macronutrients</div>
       <div class="macro-stack-cards">
         <div class="msc prot">
-          <div class="msc-left">
-            <div class="msc-ico">🥩</div>
-            <div><div class="msc-name">Protein</div><div class="msc-subname">Amino acids</div></div>
-          </div>
+          <div class="msc-left"><div class="msc-ico">🥩</div><div><div class="msc-name">Protein</div><div class="msc-subname">Amino acids</div></div></div>
           <div><div class="msc-val">${prot}<span class="msc-unit"> g</span></div></div>
         </div>
         <div class="msc fat">
-          <div class="msc-left">
-            <div class="msc-ico">💧</div>
-            <div><div class="msc-name">Fats</div><div class="msc-subname">Lipids</div></div>
-          </div>
+          <div class="msc-left"><div class="msc-ico">💧</div><div><div class="msc-name">Fats</div><div class="msc-subname">Lipids</div></div></div>
           <div><div class="msc-val">${fat}<span class="msc-unit"> g</span></div></div>
         </div>
         <div class="msc carb">
-          <div class="msc-left">
-            <div class="msc-ico">🌾</div>
-            <div><div class="msc-name">Carbs</div><div class="msc-subname">Carbohydrates</div></div>
-          </div>
+          <div class="msc-left"><div class="msc-ico">🌾</div><div><div class="msc-name">Carbs</div><div class="msc-subname">Carbohydrates</div></div></div>
           <div><div class="msc-val">${carb}<span class="msc-unit"> g</span></div></div>
         </div>
       </div>
-
-      ${vitHTML?`<div class="rdiv"></div>
-      <div class="rlbl">Vitamins & Minerals</div>
-      <div class="vit-section"><div class="vit-list">${vitHTML}</div></div>`:''}
-
-      <!-- Detail Button -->
-      <button class="detail-btn" onclick="openDetail(${idx})">
-        📊 View Detailed Ingredient Nutrition <span class="arrow">↗</span>
-      </button>
-
+      ${vitHTML?`<div class="rdiv"></div><div class="rlbl">Vitamins & Minerals</div><div class="vit-section"><div class="vit-list">${vitHTML}</div></div>`:''}
+      <button class="detail-btn" onclick="openDetail(${idx})">📊 View Detailed Ingredient Nutrition <span class="arrow">↗</span></button>
     </div>
   </div>`;
 }
 
-function animBars(idx){/* no-op: rings/bars removed */}
-function animRings(idx){/* no-op: rings removed */}
+function animBars(idx){}
+function animRings(idx){}
 
 function switchDish(idx){
   document.querySelectorAll('.dtab').forEach((t,i)=>t.classList.toggle('active',i===idx));
   document.querySelectorAll('[id^="dp-"]').forEach((p,i)=>p.style.display=i===idx?'':'none');
   activeDish=idx;
-  setTimeout(()=>{animBars(idx);animRings(idx)},80);
   document.getElementById('csel').value=String(idx);
 }
 
@@ -827,43 +1166,30 @@ function switchDish(idx){
    DETAIL MODAL
 ═══════════════════════════════════════════════════════════════ */
 function openDetail(dishIdx){
-  const r=recipesData[dishIdx];
-  document.getElementById('detail-dish-name').textContent=r.dish_name;
-  const body=document.getElementById('detail-body');
-
-  const ingInfo=r.ingredients_info;
-  const ki=r.key_ingredients||[];
-
+  const r = recipesData[dishIdx];
+  document.getElementById('detail-dish-name').textContent = r.dish_name;
+  const body = document.getElementById('detail-body');
+  const ingInfo = r.ingredients_info;
+  const ki = r.key_ingredients||[];
   if(!ingInfo||!ingInfo.length){
-    /* fallback: show key ingredients with overall totals */
     if(ki.length){
-      body.innerHTML=ki.map(k=>`
-        <div class="ing-card">
-          <div class="ing-card-top">
-            <div class="ing-card-name"><span class="ico">🌿</span>${k.ingredient_name||k.ingredients_name||''}</div>
-            <span class="ing-card-qty">${k.quantity||''}</span>
-          </div>
-        </div>`).join('');
+      body.innerHTML=ki.map(k=>`<div class="ing-card"><div class="ing-card-top"><div class="ing-card-name"><span class="ico">🌿</span>${k.ingredient_name||k.ingredients_name||''}</div><span class="ing-card-qty">${k.quantity||''}</span></div></div>`).join('');
     } else {
       body.innerHTML='<div class="no-detail">No detailed ingredient data available for this recipe.</div>';
     }
-    document.getElementById('detail-modal').classList.add('open');
-    return;
+    document.getElementById('detail-modal').classList.add('open'); return;
   }
-
-  /* Build ingredient cards */
   const ingMap={};
   ki.forEach(k=>{ const n=(k.ingredient_name||k.ingredients_name||'').toLowerCase(); ingMap[n]=k.quantity||'' });
-
   body.innerHTML=ingInfo.map(ing=>{
     const name=ing.name||ing.ingredient_name||ing.Ingredient_name||'';
     const qty=ingMap[name.toLowerCase()]||'';
-    const cal  =parseFloat(ing.calories||ing.Calories||0).toFixed(1);
-    const prot =parseFloat(ing.protein||ing.Protein||0).toFixed(1);
-    const fat  =parseFloat(ing.fats||ing.Fats||0).toFixed(1);
-    const carb =parseFloat(ing.carbohydrates||ing.Carbohydrates||0).toFixed(1);
-    const vits =ing.vitamins||ing.Vitamins||'';
-    const mins =ing.Minerals||ing.minerals||'';
+    const cal =parseFloat(ing.calories||ing.Calories||0).toFixed(1);
+    const prot=parseFloat(ing.protein||ing.Protein||0).toFixed(1);
+    const fat =parseFloat(ing.fats||ing.Fats||0).toFixed(1);
+    const carb=parseFloat(ing.carbohydrates||ing.Carbohydrates||0).toFixed(1);
+    const vits=ing.vitamins||ing.Vitamins||'';
+    const mins=ing.Minerals||ing.minerals||'';
     const vitArr=[...new Set((vits+' '+mins).split(/[,;/\s]+/).filter(v=>v.length>1&&/[A-Za-z]/.test(v)))];
     return `<div class="ing-card">
       <div class="ing-card-top">
@@ -879,7 +1205,6 @@ function openDetail(dishIdx){
       ${vitArr.length?`<div class="ing-vits">${vitArr.slice(0,8).map(v=>`<span class="ivtag">${v}</span>`).join('')}</div>`:''}
     </div>`;
   }).join('');
-
   document.getElementById('detail-modal').classList.add('open');
 }
 function closeDetail(){ document.getElementById('detail-modal').classList.remove('open') }
@@ -888,9 +1213,9 @@ function closeDetail(){ document.getElementById('detail-modal').classList.remove
    CHAT
 ═══════════════════════════════════════════════════════════════ */
 function syncChatSelect(results){
-  const sel=document.getElementById('csel');
+  const sel = document.getElementById('csel');
   sel.innerHTML='<option value="">— Select a dish —</option>';
-  results.forEach((r,i)=>{ const o=document.createElement('option'); o.value=i; o.textContent=r.dish_name; sel.appendChild(o) });
+  results.forEach((r,i)=>{const o=document.createElement('option');o.value=i;o.textContent=r.dish_name;sel.appendChild(o)});
 }
 function openChat(){ document.getElementById('chat-overlay').classList.add('open'); const s=document.getElementById('csel'); if(s.value===''&&recipesData.length)s.value=String(activeDish) }
 function closeChat(){ document.getElementById('chat-overlay').classList.remove('open') }

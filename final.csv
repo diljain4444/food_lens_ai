@@ -1,0 +1,333 @@
+Ingredient_name,Category,calories,protein,fats,carbohydrates,fiber,vitamins,Minerals,Notes / Aliases
+tomato,Vegetable,18,0.9,0.2,3.9,1.2,"Vitamin C, Vitamin A, Vitamin K","Potassium, Folate",
+onion,Vegetable,40,1.1,0.1,9.3,1.7,"Vitamin C, Vitamin B6","Potassium, Folate",
+red onion,Vegetable,40,1.1,0.1,9.3,1.7,"Vitamin C, Vitamin B6","Potassium, Folate",
+shallot,Vegetable,72,2.5,0.1,16.8,3.2,"Vitamin C, Vitamin B6, Vitamin A","Potassium, Iron, Folate",
+spring onion,Vegetable,32,1.8,0.2,7.3,2.6,"Vitamin C, Vitamin K, Vitamin A","Calcium, Iron",also called scallion or green onion
+potato,Vegetable,77,2,0.1,17,2.2,"Vitamin C, Vitamin B6","Potassium, Magnesium",
+sweet potato,Vegetable,86,1.6,0.1,20,3,"Vitamin A, Vitamin C, Vitamin B6","Potassium, Manganese",
+purple yam,Vegetable,118,1.5,0.1,27.9,4.1,"Vitamin C, Vitamin B6","Potassium, Manganese",also called ube
+yam,Vegetable,118,1.5,0.1,27.9,4.1,"Vitamin C, Vitamin B6","Potassium, Manganese",
+taro root,Vegetable,112,1.5,0.2,26.5,4.1,"Vitamin C, Vitamin B6, Vitamin E","Potassium, Magnesium, Manganese",also called arbi or colocasia
+colocasia,Vegetable,112,1.5,0.2,26.5,4.1,"Vitamin C, Vitamin B6, Vitamin E","Potassium, Magnesium, Manganese",same as taro root or arbi
+green bell pepper,Vegetable,20,0.9,0.2,4.6,1.7,"Vitamin C, Vitamin B6, Vitamin A","Potassium, Folate",
+red bell pepper,Vegetable,31,1,0.3,6,2.1,"Vitamin C, Vitamin A, Vitamin B6","Potassium, Folate",
+yellow bell pepper,Vegetable,27,1,0.2,6.3,0.9,"Vitamin C, Vitamin B6","Potassium, Folate",
+carrot,Vegetable,41,0.9,0.2,10,2.8,"Vitamin A, Vitamin K, Vitamin C","Potassium, Biotin",
+cauliflower,Vegetable,25,1.9,0.3,5,2,"Vitamin C, Vitamin K, Vitamin B6","Folate, Potassium",
+broccoli,Vegetable,34,2.8,0.4,6.6,2.6,"Vitamin C, Vitamin K, Vitamin A","Folate, Potassium, Iron",
+cabbage,Vegetable,25,1.3,0.1,5.8,2.5,"Vitamin C, Vitamin K, Vitamin B6","Folate, Manganese",
+red cabbage,Vegetable,31,1.4,0.2,7.4,2.1,"Vitamin C, Vitamin K, Vitamin A","Potassium, Manganese",
+spinach,Leafy Vegetable,23,2.9,0.4,3.6,2.2,"Vitamin K, Vitamin A, Vitamin C, Vitamin B9","Iron, Calcium, Magnesium, Potassium",
+fenugreek leaves,Leafy Vegetable,49,4.4,0.9,6,2.7,"Vitamin C, Vitamin A, Vitamin K","Iron, Calcium, Magnesium",also called methi leaves
+mustard greens,Leafy Vegetable,27,2.7,0.4,4.7,3.2,"Vitamin K, Vitamin A, Vitamin C","Calcium, Potassium, Folate",also called sarson
+amaranth leaves,Leafy Vegetable,23,2.5,0.3,4,2.1,"Vitamin A, Vitamin C, Vitamin K","Calcium, Iron, Magnesium",also called chaulai
+drumstick leaves,Leafy Vegetable,64,9.4,1.4,8.3,2,"Vitamin A, Vitamin C, Vitamin B6","Calcium, Iron, Potassium",moringa leaves
+curry leaves,Leafy Vegetable,108,6.1,1,18.7,6.4,"Vitamin A, Vitamin C, Vitamin B2","Calcium, Iron, Phosphorus",
+coriander leaves,Leafy Vegetable,23,2.1,0.5,3.7,2.8,"Vitamin K, Vitamin A, Vitamin C","Potassium, Calcium, Manganese",also called cilantro or dhania
+mint leaves,Leafy Vegetable,70,3.8,0.9,14.9,8,"Vitamin A, Vitamin C, Vitamin B2","Iron, Calcium, Manganese",also called pudina
+curry leaf,Leafy Vegetable,108,6.1,1,18.7,6.4,"Vitamin A, Vitamin C","Calcium, Iron",
+drumstick,Vegetable,37,2.1,0.2,8.5,3.2,"Vitamin C, Vitamin A, Vitamin B6","Calcium, Potassium, Iron",moringa pods or sahjan
+bitter gourd,Vegetable,17,1,0.2,3.7,2.8,"Vitamin C, Vitamin A, Vitamin B6","Iron, Potassium, Zinc",also called karela
+bottle gourd,Vegetable,14,0.6,0.1,3.4,0.5,"Vitamin C, Vitamin B5","Calcium, Iron, Potassium",also called lauki or doodhi
+ridge gourd,Vegetable,20,1.2,0.1,3.6,0.5,"Vitamin C, Vitamin B6","Calcium, Iron, Magnesium",also called turai
+sponge gourd,Vegetable,20,1.2,0.1,3.6,0.5,"Vitamin C, Vitamin B6","Calcium, Iron",also called ghia turai
+pointed gourd,Vegetable,20,2,0.3,2.2,3,"Vitamin C, Vitamin A","Calcium, Phosphorus",also called parwal
+snake gourd,Vegetable,18,0.5,0.3,3.3,0.6,"Vitamin C, Vitamin B1","Calcium, Iron, Phosphorus",also called chichinda
+ash gourd,Vegetable,13,0.4,0.1,3,0.4,"Vitamin C, Vitamin B3","Calcium, Iron, Phosphorus",also called winter melon or petha
+ivy gourd,Vegetable,18,1.4,0.1,3.1,1.6,"Vitamin C, Vitamin A","Calcium, Iron, Phosphorus",also called tindora or kundru
+cluster beans,Vegetable,16,3.2,0.4,1,0,"Vitamin C, Vitamin K","Calcium, Iron, Phosphorus",also called guar phali
+french beans,Vegetable,31,1.8,0.1,7.1,3.4,"Vitamin C, Vitamin K, Vitamin B6","Iron, Calcium, Folate",
+broad beans,Vegetable,88,7.9,0.7,15.7,5.4,"Vitamin C, Vitamin B1, Vitamin B6","Iron, Potassium, Magnesium",also called fava beans or sem
+yard long beans,Vegetable,47,2.8,0.4,8.4,0,"Vitamin C, Vitamin A","Iron, Calcium, Potassium",also called lobia phali
+okra,Vegetable,33,1.9,0.2,7.5,3.2,"Vitamin C, Vitamin K, Vitamin B6","Folate, Calcium, Magnesium",also called ladies finger or bhindi
+eggplant,Vegetable,25,1,0.2,5.9,3,"Vitamin C, Vitamin B6, Vitamin K","Potassium, Manganese, Folate",also called brinjal or baingan
+mushroom,Vegetable,22,3.1,0.3,3.3,1,"Vitamin D, Vitamin B2, Vitamin B3","Selenium, Potassium, Phosphorus",
+button mushroom,Vegetable,22,3.1,0.3,3.3,1,"Vitamin D, Vitamin B2, Vitamin B3","Selenium, Potassium, Phosphorus",
+oyster mushroom,Vegetable,33,3.3,0.4,6.1,2.3,"Vitamin D, Vitamin B3, Vitamin B5","Iron, Potassium, Phosphorus",
+peas,Vegetable,81,5.4,0.4,14.5,5.1,"Vitamin C, Vitamin K, Vitamin B1","Iron, Manganese, Folate",fresh green peas
+corn,Vegetable,86,3.3,1.4,19,2.7,"Vitamin C, Vitamin B1, Vitamin B5","Magnesium, Phosphorus, Folate",sweet corn
+baby corn,Vegetable,26,1.9,0.2,5.6,2.9,"Vitamin C, Vitamin B1","Iron, Phosphorus, Potassium",
+raw banana,Vegetable,89,1.3,0.2,22,2.6,"Vitamin C, Vitamin B6","Potassium, Magnesium",also called kachha kela
+raw papaya,Vegetable,32,1.3,0.1,7.2,0.9,"Vitamin C, Vitamin A","Potassium, Calcium, Magnesium",also called kachha papita
+raw mango,Vegetable,60,0.5,0.3,14.9,1.6,"Vitamin C, Vitamin B6","Potassium, Calcium",also called kacha aam or totapuri
+jackfruit,Vegetable,95,1.7,0.6,23.2,1.5,"Vitamin C, Vitamin B6, Vitamin A","Potassium, Calcium, Magnesium",also called kathal - used as vegetable when unripe
+lotus stem,Vegetable,74,2.6,0.1,17.2,4.9,"Vitamin C, Vitamin B6, Vitamin B9","Potassium, Copper, Iron",also called kamal kakdi
+raw jackfruit,Vegetable,51,1.5,0.4,11,1.5,"Vitamin C, Vitamin B6","Potassium, Calcium, Magnesium",unripe jackfruit used as vegetable
+garlic,Aromatic,149,6.4,0.5,33.1,2.1,"Vitamin C, Vitamin B6","Manganese, Calcium, Phosphorus",
+ginger,Aromatic,80,1.8,0.8,18,2,"Vitamin B6, Vitamin C","Magnesium, Manganese, Potassium",
+green chilli,Aromatic,40,2,0.2,9,1.5,"Vitamin C, Vitamin A, Vitamin B6","Potassium, Iron",
+red chilli,Aromatic,40,1.9,0.4,8.8,1.5,"Vitamin C, Vitamin A","Potassium, Iron",fresh red chilli
+lemon,Fruit,29,1.1,0.3,9.3,2.8,"Vitamin C, Vitamin B6, Vitamin B5","Potassium, Calcium, Iron",
+lime,Fruit,30,0.7,0.2,10.5,2.8,"Vitamin C, Vitamin B6","Calcium, Iron, Potassium",
+raw tamarind,Aromatic,239,2.8,0.6,62.5,5.1,"Vitamin C, Vitamin B1, Vitamin B3","Iron, Potassium, Calcium, Magnesium",imli
+tamarind paste,Aromatic,239,2.8,0.6,62.5,5.1,"Vitamin C, Vitamin B1","Iron, Potassium, Magnesium",concentrated tamarind
+kokum,Fruit,45,0.5,0.5,10,2.1,Vitamin C,"Calcium, Iron, Potassium",dried garcinia indica
+raw jackfruit seeds,Vegetable,98,6.6,0.4,18.3,1.5,"Vitamin B1, Vitamin B2","Calcium, Iron, Phosphorus",
+radish,Vegetable,16,0.7,0.1,3.4,1.6,"Vitamin C, Vitamin B6, Folate","Potassium, Calcium, Phosphorus",also called mooli
+turnip,Vegetable,28,0.9,0.1,6.4,1.8,"Vitamin C, Vitamin B6, Folate","Potassium, Calcium, Manganese",also called shalgam
+beetroot,Vegetable,43,1.6,0.2,9.6,2.8,"Vitamin C, Vitamin B9, Vitamin B6","Iron, Potassium, Manganese",
+zucchini,Vegetable,17,1.2,0.3,3.1,1,"Vitamin C, Vitamin B6, Vitamin A","Potassium, Manganese, Folate",
+cucumber,Vegetable,15,0.7,0.1,3.6,0.5,"Vitamin K, Vitamin C, Vitamin B5","Potassium, Magnesium",also called kheera
+pumpkin,Vegetable,26,1,0.1,6.5,0.5,"Vitamin A, Vitamin C, Vitamin B2","Potassium, Copper, Manganese",also called kaddu
+raw banana flower,Vegetable,51,1.6,0.6,9.9,5.7,"Vitamin C, Vitamin A","Calcium, Iron, Phosphorus",also called banana blossom or kele ka phool
+elephant yam,Vegetable,118,1.2,0.1,27.9,4.1,"Vitamin C, Vitamin B6","Potassium, Magnesium",also called suran or jimikand
+water chestnut,Vegetable,97,1.4,0.1,23.9,3,"Vitamin B6, Vitamin B2","Potassium, Manganese, Copper",also called singhara
+raw plantain,Vegetable,89,1.3,0.2,22,2.6,"Vitamin C, Vitamin B6","Potassium, Magnesium",kachha kela variety
+celery,Vegetable,16,0.7,0.2,3,1.6,"Vitamin K, Vitamin C, Vitamin B6","Potassium, Folate, Manganese",
+leek,Vegetable,61,1.5,0.3,14.2,1.8,"Vitamin K, Vitamin C, Vitamin A","Manganese, Iron, Folate",
+asparagus,Vegetable,20,2.2,0.1,3.9,2.1,"Vitamin K, Vitamin A, Vitamin C, Folate","Iron, Copper, Manganese",
+artichoke,Vegetable,47,3.3,0.2,10.5,5.4,"Vitamin C, Vitamin K, Folate","Magnesium, Iron, Potassium",
+bamboo shoots,Vegetable,27,2.6,0.3,5.2,2.2,"Vitamin B6, Vitamin E, Vitamin B2","Potassium, Manganese, Zinc",
+raw coconut,Vegetable,354,3.3,33.5,15.2,9,"Vitamin C, Vitamin B1, Vitamin B3","Manganese, Copper, Iron",fresh coconut flesh
+mango,Fruit,60,0.8,0.4,15,1.6,"Vitamin A, Vitamin C, Vitamin B6","Potassium, Copper, Folate",ripe alphonso or any variety
+banana,Fruit,89,1.1,0.3,22.8,2.6,"Vitamin B6, Vitamin C, Vitamin B2","Potassium, Magnesium, Manganese",
+apple,Fruit,52,0.3,0.2,13.8,2.4,"Vitamin C, Vitamin K, Vitamin B6","Potassium, Manganese",
+grapes,Fruit,69,0.7,0.2,18.1,0.9,"Vitamin C, Vitamin K, Vitamin B6","Copper, Potassium, Manganese",
+black grapes,Fruit,69,0.7,0.2,18.1,0.9,"Vitamin C, Vitamin K","Copper, Potassium, Iron",
+watermelon,Fruit,30,0.6,0.2,7.6,0.4,"Vitamin A, Vitamin C, Vitamin B5","Potassium, Copper, Lycopene",
+papaya,Fruit,43,0.5,0.3,10.8,1.7,"Vitamin C, Vitamin A, Folate","Potassium, Calcium, Magnesium",ripe papaya
+pineapple,Fruit,50,0.5,0.1,13.1,1.4,"Vitamin C, Vitamin B1, Vitamin B6","Manganese, Copper, Potassium",
+pomegranate,Fruit,83,1.7,1.2,18.7,4,"Vitamin C, Vitamin K, Folate","Potassium, Copper, Manganese",also called anar
+guava,Fruit,68,2.6,1,14.3,5.4,"Vitamin C, Vitamin A, Vitamin B6, Folate","Potassium, Copper, Manganese",
+orange,Fruit,47,0.9,0.1,11.8,2.4,"Vitamin C, Vitamin B1, Folate","Potassium, Calcium, Phosphorus",
+sweet lime,Fruit,43,0.8,0.3,9.3,1.8,"Vitamin C, Vitamin A","Potassium, Calcium",also called mosambi
+kiwi,Fruit,61,1.1,0.5,14.7,3,"Vitamin C, Vitamin K, Vitamin E","Potassium, Copper, Folate",
+strawberry,Fruit,32,0.7,0.3,7.7,2,"Vitamin C, Vitamin B9, Vitamin B6","Manganese, Potassium, Iron",
+pear,Fruit,57,0.4,0.1,15.2,3.1,"Vitamin C, Vitamin K, Vitamin B2","Copper, Potassium, Boron",
+peach,Fruit,39,0.9,0.3,9.5,1.5,"Vitamin C, Vitamin A, Vitamin E","Potassium, Copper, Niacin",
+plum,Fruit,46,0.7,0.3,11.4,1.4,"Vitamin C, Vitamin A, Vitamin K","Potassium, Copper, Manganese",also called aloo bukhara
+fig,Fruit,74,0.8,0.3,19.2,2.9,"Vitamin B6, Vitamin K, Vitamin B2","Potassium, Calcium, Magnesium, Iron",fresh anjeer
+dates,Fruit,277,1.8,0.2,74.9,6.7,"Vitamin B6, Vitamin K, Vitamin B5","Potassium, Magnesium, Copper, Iron",khajur
+coconut water,Fruit,19,0.7,0.2,3.7,1.1,"Vitamin C, Vitamin B2, Vitamin B3","Potassium, Sodium, Manganese",nariyal paani
+amla,Fruit,44,0.9,0.6,10.2,4.3,"Vitamin C, Vitamin A, Vitamin E","Calcium, Iron, Phosphorus",Indian gooseberry
+jamun,Fruit,62,0.7,0.2,14,0.6,"Vitamin C, Vitamin A, Vitamin B6","Iron, Calcium, Potassium",Java plum or black plum
+chickoo,Fruit,83,0.4,1.1,19.9,5.3,"Vitamin A, Vitamin C, Vitamin B3","Potassium, Iron, Calcium",sapota or sapodilla
+lychee,Fruit,66,0.8,0.4,16.5,1.3,"Vitamin C, Vitamin B6, Vitamin B2","Copper, Potassium, Phosphorus",
+jackfruit ripe,Fruit,95,1.7,0.6,23.2,1.5,"Vitamin C, Vitamin B6, Vitamin A","Potassium, Calcium, Magnesium",ripe kathal
+custard apple,Fruit,101,1.7,0.6,25.2,4.4,"Vitamin C, Vitamin B6, Vitamin B2","Potassium, Magnesium, Iron",sitaphal or shareefa
+passion fruit,Fruit,97,2.2,0.7,23.4,10.4,"Vitamin C, Vitamin A, Vitamin B2","Iron, Potassium, Phosphorus",
+starfruit,Fruit,31,1,0.3,6.7,2.8,"Vitamin C, Vitamin B5, Vitamin B2","Potassium, Copper, Phosphorus",carambola or kamrakh
+wood apple,Fruit,134,7.1,3.7,18.1,5,"Vitamin C, Vitamin A, Vitamin B1","Calcium, Iron, Phosphorus",bael or Bengal quince
+mulberry,Fruit,43,1.4,0.4,9.8,1.7,"Vitamin C, Vitamin E, Vitamin K","Iron, Potassium, Calcium",shahtoot
+tamarind fruit,Fruit,239,2.8,0.6,62.5,5.1,"Vitamin C, Vitamin B1, Vitamin B3","Iron, Potassium, Calcium, Magnesium",imli
+gooseberry,Fruit,44,0.9,0.6,10.2,4.3,"Vitamin C, Vitamin A, Vitamin E","Calcium, Iron, Phosphorus",amla
+avocado,Fruit,160,2,14.7,8.5,6.7,"Vitamin K, Vitamin E, Vitamin C, Folate","Potassium, Copper, Magnesium",
+melon,Fruit,34,0.8,0.2,8.2,0.9,"Vitamin A, Vitamin C, Vitamin B6","Potassium, Copper, Folate",kharbooja
+muskmelon,Fruit,34,0.8,0.2,8.2,0.9,"Vitamin A, Vitamin C, Vitamin B6","Potassium, Copper, Folate",kharbooja
+cranberry,Fruit,46,0.4,0.1,12.2,4.6,"Vitamin C, Vitamin E, Vitamin K","Manganese, Copper",
+raspberry,Fruit,52,1.2,0.7,11.9,6.5,"Vitamin C, Vitamin K, Vitamin E","Manganese, Copper, Iron",
+blueberry,Fruit,57,0.7,0.3,14.5,2.4,"Vitamin C, Vitamin K, Vitamin B6","Manganese, Copper, Potassium",
+red lentils,Dal,116,9,0.4,20.1,7.9,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Zinc",masoor dal cooked
+red lentils raw,Dal,352,25.8,1.1,63.4,10.7,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Zinc",masoor dal raw
+split pigeon pea,Dal,116,8.6,0.3,21.1,8.5,"Vitamin B1, Vitamin B9, Vitamin B3","Iron, Potassium, Phosphorus, Magnesium",toor dal or arhar dal cooked
+split pigeon pea raw,Dal,335,22.3,1.5,62.7,15,"Vitamin B1, Vitamin B9, Vitamin B3","Iron, Potassium, Phosphorus, Magnesium",toor dal or arhar dal raw
+split chickpea,Dal,164,8.9,2.6,27.8,4.5,"Vitamin B1, Vitamin B2, Vitamin B9","Iron, Potassium, Phosphorus, Magnesium",chana dal cooked
+split chickpea raw,Dal,364,20.1,5.6,60.4,7.6,"Vitamin B1, Vitamin B2, Vitamin B9","Iron, Potassium, Phosphorus, Magnesium",chana dal raw
+split black gram,Dal,105,7.6,0.4,18.3,7,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Magnesium, Zinc",urad dal cooked
+split black gram raw,Dal,341,25.2,1.6,59,18.3,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Magnesium, Zinc",urad dal raw
+split green gram,Dal,105,7,0.4,19.1,7.6,"Vitamin B1, Vitamin B9, Vitamin C","Iron, Potassium, Magnesium, Zinc",moong dal cooked
+split green gram raw,Dal,347,24,1.2,62.6,16.3,"Vitamin B1, Vitamin B9, Vitamin C","Iron, Potassium, Magnesium, Zinc",moong dal raw
+whole green gram,Dal,105,7,0.4,19.1,7.6,"Vitamin B1, Vitamin B9, Vitamin C","Iron, Potassium, Magnesium, Zinc",whole moong cooked
+whole black gram,Dal,339,25.2,1.6,58.9,18.3,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Magnesium, Zinc",whole urad raw
+kidney beans,Dal,127,8.7,0.5,22.8,6.4,"Vitamin B1, Vitamin B9, Vitamin K","Iron, Potassium, Phosphorus, Magnesium",rajma cooked
+kidney beans raw,Dal,333,23.6,0.8,60,15.2,"Vitamin B1, Vitamin B9, Vitamin K","Iron, Potassium, Phosphorus, Magnesium",rajma raw
+chickpeas,Dal,164,8.9,2.6,27.4,7.6,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Manganese",kabuli chana cooked
+chickpeas raw,Dal,364,19.3,6,60.7,17.4,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Manganese",kabuli chana raw
+black chickpeas,Dal,164,9.4,2.6,27.4,7.6,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Manganese",kala chana cooked
+black eyed peas,Dal,116,7.7,0.5,20.7,6.5,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Magnesium, Zinc",lobia cooked
+moth beans,Dal,343,23.6,1.6,61.5,10.3,"Vitamin B1, Vitamin B9, Vitamin C","Iron, Potassium, Phosphorus, Zinc",matki raw
+horse gram,Dal,321,22,0.5,57.2,5.3,"Vitamin B1, Vitamin B2, Vitamin B3","Iron, Calcium, Phosphorus, Potassium",kulthi dal raw
+field beans,Dal,334,24.9,1.5,60.1,8.7,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Magnesium",val dal or surti papdi raw
+flat beans,Dal,334,24.9,1.5,60.1,8.7,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus",papdi raw
+peas dried,Dal,339,24.6,1.2,63.7,25.5,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Zinc",dried white peas raw
+lentils,Dal,116,9,0.4,20.1,7.9,"Vitamin B1, Vitamin B9, Vitamin B6","Iron, Potassium, Phosphorus, Zinc",generic lentils cooked
+basmati rice cooked,Cereal,130,2.7,0.3,28.1,0.4,"Vitamin B1, Vitamin B3","Manganese, Phosphorus, Magnesium",
+basmati rice raw,Cereal,349,7.9,0.6,77.1,1.4,"Vitamin B1, Vitamin B3, Vitamin B6","Manganese, Phosphorus, Magnesium",
+brown rice cooked,Cereal,123,2.7,1,25.6,1.8,"Vitamin B1, Vitamin B3, Vitamin B6","Manganese, Phosphorus, Magnesium, Selenium",
+brown rice raw,Cereal,370,7.9,2.9,77.2,3.5,"Vitamin B1, Vitamin B3, Vitamin B6","Manganese, Phosphorus, Magnesium, Selenium",
+white rice cooked,Cereal,130,2.7,0.3,28.1,0.4,"Vitamin B1, Vitamin B3","Manganese, Phosphorus",
+whole wheat flour,Cereal,340,13.2,2.5,72.6,10.7,"Vitamin B1, Vitamin B3, Vitamin B6, Vitamin E","Iron, Manganese, Phosphorus, Magnesium",atta
+refined flour,Cereal,364,10.3,1,76.3,2.7,"Vitamin B1, Vitamin B3","Iron, Calcium, Phosphorus",maida
+semolina,Cereal,360,12.7,1.1,73.8,3.9,"Vitamin B1, Vitamin B3, Vitamin B6","Iron, Magnesium, Phosphorus, Zinc",suji or rawa
+chickpea flour,Cereal,387,22.4,6.7,57.8,10.8,"Vitamin B1, Vitamin B6, Vitamin B9","Iron, Potassium, Phosphorus, Zinc, Manganese",besan or gram flour
+oats,Cereal,389,17,7,66.3,10.6,"Vitamin B1, Vitamin B5, Vitamin B9","Manganese, Phosphorus, Magnesium, Iron, Zinc",rolled oats
+oats cooked,Cereal,71,2.5,1.5,12,1.7,"Vitamin B1, Vitamin B5","Manganese, Phosphorus, Magnesium",
+poha,Cereal,333,7,1.5,73,1.5,"Vitamin B1, Vitamin B3","Iron, Magnesium, Phosphorus",flattened rice or beaten rice
+puffed rice,Cereal,402,6.3,0.5,89.9,1,"Vitamin B1, Vitamin B3","Iron, Phosphorus",murmura or muri
+corn flour,Cereal,381,0.3,0.1,91.3,0.9,Vitamin B3,"Iron, Phosphorus, Zinc",cornstarch
+corn meal,Cereal,362,8.1,3.6,76.8,7.3,"Vitamin B3, Vitamin B1, Vitamin B6","Iron, Phosphorus, Magnesium, Manganese",makkai ka atta
+sorghum flour,Cereal,349,11.3,3.3,72.9,6.3,"Vitamin B1, Vitamin B3, Vitamin B6","Iron, Phosphorus, Magnesium, Potassium",jowar atta
+millet flour,Cereal,378,11,4.2,72.9,8.5,"Vitamin B3, Vitamin B1, Vitamin B9","Iron, Phosphorus, Magnesium, Zinc",bajra atta
+finger millet flour,Cereal,336,7.3,1.5,72,3.6,"Vitamin B1, Vitamin B3, Vitamin B2","Calcium, Iron, Phosphorus, Magnesium",ragi or nachni atta
+quinoa cooked,Cereal,120,4.4,1.9,21.3,2.8,"Vitamin B1, Vitamin B2, Vitamin B6, Vitamin E","Manganese, Phosphorus, Magnesium, Iron, Zinc",
+buckwheat flour,Cereal,343,13.3,3.4,71.5,10,"Vitamin B3, Vitamin B6, Vitamin B9","Manganese, Copper, Magnesium, Phosphorus",kuttu atta
+water chestnut flour,Cereal,349,4,0.5,85,0,"Vitamin B6, Vitamin B2","Potassium, Manganese, Copper",singhara atta
+barley,Cereal,354,12.5,2.3,73.5,17.3,"Vitamin B1, Vitamin B3, Vitamin B6","Manganese, Selenium, Phosphorus, Magnesium",jau
+barley cooked,Cereal,123,2.3,0.4,28.2,3.8,"Vitamin B1, Vitamin B3","Manganese, Selenium, Phosphorus",
+amaranth flour,Cereal,371,13.6,7,65.3,6.7,"Vitamin B1, Vitamin B6, Vitamin B9","Calcium, Iron, Phosphorus, Magnesium, Manganese",rajgira atta
+lotus seed flour,Cereal,332,15.4,1.9,64.5,2.5,"Vitamin B1, Vitamin B2","Phosphorus, Potassium, Magnesium",makhana atta
+bread,Cereal,265,9,3.2,49,2.7,"Vitamin B1, Vitamin B3, Vitamin B9","Iron, Selenium, Manganese",white bread
+whole wheat bread,Cereal,247,13,3.4,41.3,6.8,"Vitamin B1, Vitamin B3, Vitamin B6","Iron, Selenium, Manganese, Magnesium",
+noodles cooked,Cereal,138,4.5,0.6,25,1.8,"Vitamin B1, Vitamin B3","Iron, Selenium, Phosphorus",
+pasta cooked,Cereal,131,5,1.1,25.1,1.8,"Vitamin B1, Vitamin B3, Vitamin B9","Selenium, Manganese, Phosphorus, Iron",
+rice flour,Cereal,366,5.9,1.4,80.1,2.4,"Vitamin B1, Vitamin B3","Iron, Phosphorus, Manganese",chawal ka atta
+sago,Cereal,352,0.2,0.2,86.7,0.9,Vitamin B6,"Iron, Calcium, Potassium",sabudana
+tapioca pearls,Cereal,352,0.2,0.2,86.7,0.9,Vitamin B6,"Iron, Calcium, Potassium",sabudana
+paneer,Dairy,265,18.3,20.8,1.2,0,"Vitamin A, Vitamin D, Vitamin B2","Calcium, Phosphorus, Selenium",Indian cottage cheese
+low fat paneer,Dairy,180,18,9,3.7,0,"Vitamin A, Vitamin D, Vitamin B2","Calcium, Phosphorus, Selenium",
+whole milk,Dairy,61,3.2,3.3,4.8,0,"Vitamin D, Vitamin B12, Vitamin A, Vitamin B2","Calcium, Potassium, Phosphorus, Selenium",
+skimmed milk,Dairy,34,3.4,0.1,5,0,"Vitamin D, Vitamin B12, Vitamin A, Vitamin B2","Calcium, Potassium, Phosphorus",
+buffalo milk,Dairy,97,3.75,6.89,5.18,0,"Vitamin A, Vitamin D, Vitamin B2","Calcium, Phosphorus, Potassium",
+yogurt,Dairy,61,3.5,3.3,4.7,0,"Vitamin B12, Vitamin B2, Vitamin D","Calcium, Phosphorus, Potassium",curd or dahi
+low fat yogurt,Dairy,40,3.5,0.9,4.7,0,"Vitamin B12, Vitamin B2","Calcium, Phosphorus, Potassium",low fat dahi
+Greek yogurt,Dairy,59,10,0.4,3.6,0,"Vitamin B12, Vitamin B2","Calcium, Phosphorus, Potassium",thick strained yogurt
+buttermilk,Dairy,40,3.3,0.9,4.8,0,"Vitamin B12, Vitamin B2, Vitamin D","Calcium, Potassium, Phosphorus",chaas or lassi base
+ghee,Dairy,900,0,99.5,0,0,"Vitamin A, Vitamin D, Vitamin E, Vitamin K",None,clarified butter
+butter,Dairy,717,0.9,81.1,0.1,0,"Vitamin A, Vitamin D, Vitamin E, Vitamin K, Vitamin B12","Calcium, Phosphorus, Sodium",
+cream,Dairy,340,2.1,36.1,2.8,0,"Vitamin A, Vitamin D, Vitamin E","Calcium, Phosphorus",fresh cream
+whipping cream,Dairy,340,2.1,36.1,2.8,0,"Vitamin A, Vitamin D","Calcium, Phosphorus",
+condensed milk,Dairy,321,7.9,8.7,54.4,0,"Vitamin A, Vitamin D, Vitamin B12, Vitamin B2","Calcium, Potassium, Phosphorus",sweetened condensed milk
+evaporated milk,Dairy,134,6.8,7.6,10,0,"Vitamin A, Vitamin D, Vitamin B12","Calcium, Phosphorus, Potassium",
+mozzarella cheese,Dairy,280,19.4,22.4,2.2,0,"Vitamin A, Vitamin B12, Vitamin D","Calcium, Phosphorus, Sodium",
+cheddar cheese,Dairy,403,24.9,33.1,1.3,0,"Vitamin A, Vitamin B12, Vitamin D, Vitamin K","Calcium, Phosphorus, Sodium, Zinc",
+khoya,Dairy,387,14,22,38.5,0,"Vitamin A, Vitamin D, Vitamin B12","Calcium, Phosphorus, Potassium",mawa or reduced milk solids
+malai,Dairy,340,2.1,36.1,2.8,0,"Vitamin A, Vitamin D",Calcium,fresh cream or milk fat
+ice cream,Dairy,207,3.5,11,23.6,0,"Vitamin A, Vitamin D, Vitamin B12, Vitamin B2","Calcium, Phosphorus, Potassium",
+milk powder,Dairy,496,26.3,26.7,38.4,0,"Vitamin A, Vitamin D, Vitamin B12, Vitamin B2","Calcium, Phosphorus, Potassium, Zinc",
+chicken breast,Protein,165,31,3.6,0,0,"Vitamin B6, Vitamin B12, Vitamin B3","Selenium, Phosphorus, Potassium, Zinc",cooked skinless
+chicken breast raw,Protein,120,22.5,2.6,0,0,"Vitamin B6, Vitamin B12, Vitamin B3","Selenium, Phosphorus, Potassium, Zinc",raw skinless
+chicken thigh,Protein,209,26,10.9,0,0,"Vitamin B6, Vitamin B12, Vitamin B3","Selenium, Phosphorus, Potassium, Zinc",cooked skinless
+chicken leg,Protein,191,27.4,8.5,0,0,"Vitamin B6, Vitamin B12, Vitamin B3","Selenium, Phosphorus, Potassium, Zinc",cooked skinless
+chicken wings,Protein,290,27,19.5,0,0,"Vitamin B6, Vitamin B12","Selenium, Phosphorus, Potassium",cooked
+minced chicken,Protein,143,17.4,8.1,0,0,"Vitamin B6, Vitamin B12, Vitamin B3","Selenium, Phosphorus, Zinc",
+mutton,Protein,294,25.6,21,0,0,"Vitamin B12, Vitamin B6, Vitamin B3","Iron, Zinc, Phosphorus, Selenium",cooked goat meat
+mutton raw,Protein,109,18.7,3.6,0,0,"Vitamin B12, Vitamin B6, Vitamin B3","Iron, Zinc, Phosphorus, Selenium",raw goat meat
+lamb,Protein,258,25.9,16.5,0,0,"Vitamin B12, Vitamin B6, Vitamin B3","Iron, Zinc, Phosphorus, Selenium",cooked
+beef,Protein,250,26.1,15.4,0,0,"Vitamin B12, Vitamin B6, Vitamin B3","Iron, Zinc, Phosphorus, Selenium",cooked lean
+pork,Protein,242,27.3,14,0,0,"Vitamin B12, Vitamin B1, Vitamin B3, Vitamin B6","Selenium, Phosphorus, Zinc, Iron",cooked lean
+fish salmon,Protein,208,20.4,13.4,0,0,"Vitamin D, Vitamin B12, Vitamin B3, Vitamin B6","Selenium, Phosphorus, Potassium, Omega-3",cooked
+fish rohu,Protein,97,16.6,2.7,1.1,0,"Vitamin D, Vitamin B12, Vitamin B3","Phosphorus, Selenium, Potassium",Indian carp cooked
+fish catla,Protein,111,18,3.4,1.4,0,"Vitamin D, Vitamin B12, Vitamin B3","Phosphorus, Selenium, Potassium",Indian carp cooked
+fish hilsa,Protein,273,21.8,19.4,2.9,0,"Vitamin D, Vitamin B12, Vitamin B3","Phosphorus, Selenium, Omega-3",ilish cooked
+fish tuna,Protein,144,30,1,0,0,"Vitamin D, Vitamin B12, Vitamin B3, Vitamin B6","Selenium, Phosphorus, Potassium",cooked
+fish mackerel,Protein,205,19,13.9,0,0,"Vitamin D, Vitamin B12, Vitamin B3","Selenium, Phosphorus, Omega-3",bangda cooked
+fish pomfret,Protein,96,17.5,2.5,0,0,"Vitamin D, Vitamin B12","Phosphorus, Selenium, Potassium",cooked
+prawns,Protein,99,24,0.3,0.2,0,"Vitamin B12, Vitamin D, Vitamin B3","Selenium, Phosphorus, Iron, Zinc",cooked shrimp
+prawns raw,Protein,71,13.6,1.1,0.6,0,"Vitamin B12, Vitamin D, Vitamin B3","Selenium, Phosphorus, Iron, Zinc",raw shrimp
+eggs,Protein,155,13,11,1.1,0,"Vitamin A, Vitamin D, Vitamin B12, Vitamin B2, Vitamin B5","Selenium, Phosphorus, Iron, Zinc, Choline",whole egg
+egg white,Protein,52,10.9,0.2,0.7,0,"Vitamin B2, Vitamin B3","Potassium, Selenium, Phosphorus",
+egg yolk,Protein,322,15.9,26.5,3.6,0,"Vitamin A, Vitamin D, Vitamin B12, Vitamin E","Iron, Zinc, Phosphorus, Choline",
+tofu,Protein,76,8.1,4.8,1.9,0.3,"Vitamin B1, Vitamin B2, Calcium","Calcium, Iron, Manganese, Phosphorus",firm tofu
+soy chunks,Protein,336,52.4,0.5,33.2,13,"Vitamin B1, Vitamin B2, Vitamin B9","Iron, Calcium, Phosphorus, Potassium",textured soy protein or meal maker
+soy granules,Protein,336,52.4,0.5,33.2,13,"Vitamin B1, Vitamin B2, Vitamin B9","Iron, Calcium, Phosphorus, Potassium",
+sunflower oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K",None,
+groundnut oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K",None,peanut oil
+mustard oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K",None,sarson ka tel
+coconut oil,Oil,862,0,100,0,0,"Vitamin E, Vitamin K",Iron,
+sesame oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K",None,til ka tel
+olive oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K",None,
+rice bran oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K",None,
+canola oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K",None,
+palm oil,Oil,884,0,100,0,0,"Vitamin E, Vitamin K, Vitamin A",None,
+vanaspati,Oil,900,0,100,0,0,"Vitamin A, Vitamin D",None,hydrogenated vegetable oil
+almonds,Nut,579,21.2,49.9,21.6,12.5,"Vitamin E, Vitamin B2, Vitamin B3","Magnesium, Calcium, Iron, Phosphorus, Zinc",badam
+cashew nuts,Nut,553,18.2,43.9,30.2,3.3,"Vitamin K, Vitamin B1, Vitamin B6","Magnesium, Phosphorus, Zinc, Iron, Copper",kaju
+walnuts,Nut,654,15.2,65.2,13.7,6.7,"Vitamin E, Vitamin B6, Vitamin B9","Manganese, Copper, Magnesium, Phosphorus",akhrot
+pistachios,Nut,562,20.2,45.4,27.2,10.3,"Vitamin B6, Vitamin B1, Vitamin E","Phosphorus, Potassium, Manganese, Copper",pista
+peanuts,Nut,567,25.8,49.2,16.1,8.5,"Vitamin B3, Vitamin B9, Vitamin E","Manganese, Phosphorus, Magnesium, Iron",groundnuts or moongphali
+roasted peanuts,Nut,586,23.7,49.7,21.5,8,"Vitamin B3, Vitamin B9, Vitamin E","Manganese, Phosphorus, Magnesium, Iron",
+pine nuts,Nut,673,13.7,68.4,13.1,3.7,"Vitamin E, Vitamin K, Vitamin B1","Manganese, Phosphorus, Magnesium, Zinc, Iron",chilgoza
+macadamia nuts,Nut,718,7.9,75.8,13.8,8.6,"Vitamin B1, Vitamin B6, Vitamin E","Manganese, Copper, Magnesium, Iron",
+hazelnuts,Nut,628,15,60.8,16.7,9.7,"Vitamin E, Vitamin B9, Vitamin B1, Vitamin B6","Manganese, Copper, Magnesium, Phosphorus",filberts
+fox nuts,Nut,347,9.7,0.1,76.9,14.5,"Vitamin B1, Vitamin B2","Calcium, Magnesium, Phosphorus, Potassium",makhana or lotus seeds
+sesame seeds,Seed,573,17.7,49.7,23.5,11.8,"Vitamin B1, Vitamin B6, Vitamin E","Calcium, Iron, Magnesium, Phosphorus, Manganese, Zinc",til
+flaxseeds,Seed,534,18.3,42.2,28.9,27.3,"Vitamin B1, Vitamin E","Manganese, Magnesium, Phosphorus, Copper",alsi
+chia seeds,Seed,486,16.5,30.7,42.1,34.4,"Vitamin B1, Vitamin B3","Calcium, Iron, Magnesium, Phosphorus, Manganese, Zinc",
+sunflower seeds,Seed,584,20.8,51.5,20,8.6,"Vitamin E, Vitamin B1, Vitamin B6, Vitamin B5","Selenium, Manganese, Magnesium, Phosphorus, Copper, Iron",
+pumpkin seeds,Seed,559,30.2,49.1,10.7,6,"Vitamin K, Vitamin E, Vitamin B2, Vitamin B3","Manganese, Phosphorus, Magnesium, Iron, Zinc, Copper",
+poppy seeds,Seed,525,17.9,41.6,28.1,19.5,"Vitamin B1, Vitamin B6, Vitamin E","Calcium, Iron, Magnesium, Phosphorus, Manganese, Zinc",khus khus
+melon seeds,Seed,557,28.8,45.5,15.4,3.9,"Vitamin B1, Vitamin B3, Vitamin E","Iron, Phosphorus, Magnesium, Zinc, Manganese",charmagaz
+watermelon seeds,Seed,557,28.3,47.4,15.3,0,"Vitamin B1, Vitamin B6","Iron, Magnesium, Phosphorus, Zinc, Potassium",
+hemp seeds,Seed,553,31.6,48.7,8.7,4,"Vitamin E, Vitamin B1, Vitamin B6","Phosphorus, Potassium, Sodium, Magnesium, Calcium, Iron, Zinc, Manganese",
+coconut dried,Nut,660,6.9,64.5,23.7,16.3,"Vitamin C, Vitamin B1","Manganese, Copper, Iron, Selenium",desiccated coconut
+turmeric powder,Spice,312,9.7,3.3,67.1,21.1,"Vitamin C, Vitamin E, Vitamin B6","Iron, Potassium, Manganese, Magnesium",haldi
+cumin seeds,Spice,375,17.8,22.3,44.2,10.5,"Vitamin B1, Vitamin B3, Vitamin E","Iron, Manganese, Magnesium, Calcium, Phosphorus",jeera
+cumin powder,Spice,375,17.8,22.3,44.2,10.5,"Vitamin B1, Vitamin B3, Vitamin E","Iron, Manganese, Magnesium, Calcium, Phosphorus",jeera powder
+coriander powder,Spice,298,12.4,17.8,54.9,41.9,"Vitamin C, Vitamin K, Vitamin B6","Iron, Manganese, Calcium, Magnesium, Phosphorus",dhania powder
+coriander seeds,Spice,298,12.4,17.8,54.9,41.9,"Vitamin C, Vitamin K, Vitamin B6","Iron, Manganese, Calcium, Magnesium, Phosphorus",dhania seeds
+red chilli powder,Spice,282,13.5,12.9,49.7,34.9,"Vitamin A, Vitamin C, Vitamin B6","Iron, Potassium, Manganese, Magnesium",lal mirch powder
+black pepper,Spice,251,10.4,3.3,63.9,25.3,"Vitamin C, Vitamin K, Vitamin B6","Manganese, Iron, Potassium, Calcium",kali mirch
+black pepper powder,Spice,251,10.4,3.3,63.9,25.3,"Vitamin C, Vitamin K, Vitamin B6","Manganese, Iron, Potassium, Calcium",kali mirch powder
+garam masala,Spice,350,13,15,50,20,"Vitamin A, Vitamin C, Vitamin K","Iron, Calcium, Manganese, Magnesium",spice blend
+mustard seeds,Spice,508,26.1,36.2,28.1,12.2,"Vitamin B1, Vitamin B3, Vitamin E, Vitamin B6","Selenium, Manganese, Phosphorus, Magnesium, Iron",rai or sarson
+fenugreek seeds,Spice,323,23,6.4,58.4,24.6,"Vitamin C, Vitamin B6, Vitamin B1","Iron, Manganese, Magnesium, Phosphorus, Copper",methi seeds
+fennel seeds,Spice,345,15.8,14.9,52.3,39.8,"Vitamin C, Vitamin B6, Vitamin B3","Calcium, Iron, Manganese, Magnesium",saunf
+carom seeds,Spice,305,17.1,21.8,43,11.9,"Vitamin B3, Vitamin C","Calcium, Iron, Phosphorus",ajwain
+cloves,Spice,274,6,13,65.5,33.9,"Vitamin C, Vitamin K, Vitamin E","Manganese, Iron, Calcium, Magnesium",laung
+green cardamom,Spice,311,10.8,6.7,68.5,28,"Vitamin C, Vitamin B2, Vitamin B3","Manganese, Iron, Calcium, Magnesium, Zinc",elaichi
+black cardamom,Spice,311,10.8,6.7,68.5,28,"Vitamin C, Vitamin B2","Manganese, Iron, Calcium",badi elaichi
+cinnamon,Spice,247,4,1.2,80.6,53.1,"Vitamin K, Vitamin B6","Manganese, Calcium, Iron, Magnesium",dalchini
+bay leaves,Spice,313,7.6,8.4,74.9,26.3,"Vitamin A, Vitamin C, Vitamin B6","Iron, Calcium, Manganese, Magnesium",tej patta
+star anise,Spice,337,17.6,15.9,50,14.6,"Vitamin C, Vitamin B6, Vitamin A","Iron, Calcium, Manganese, Magnesium",chakri phool
+mace,Spice,475,6.7,32.4,50.5,20.2,"Vitamin A, Vitamin C, Vitamin B3","Iron, Copper, Calcium, Manganese",javitri
+nutmeg,Spice,525,5.8,36.3,49.3,20.8,"Vitamin B6, Vitamin B1, Vitamin A","Manganese, Copper, Magnesium, Iron",jaiphal
+asafoetida,Spice,297,4,1.1,67.8,4.1,"Vitamin B3, Vitamin C","Calcium, Iron, Phosphorus",hing
+dry ginger powder,Spice,347,8.8,6,71.6,14.1,"Vitamin B6, Vitamin C","Manganese, Magnesium, Potassium, Iron",saunth
+dry mango powder,Spice,323,2.4,1.3,79.6,3.5,"Vitamin C, Vitamin A","Iron, Calcium, Potassium",amchur
+pomegranate powder,Spice,346,2.7,2.9,80.5,11.8,"Vitamin C, Vitamin B6","Iron, Potassium, Calcium",anardana
+black salt,Spice,0,0,0,0,0,None,"Sodium, Iron, Sulfur",kala namak
+rock salt,Spice,0,0,0,0,0,None,"Sodium, Potassium, Calcium",sendha namak
+salt,Spice,0,0,0,0,0,None,"Sodium, Chloride, Iodine",table salt
+sugar,Sweetener,387,0,0,100,0,None,None,white sugar
+brown sugar,Sweetener,380,0.1,0,98.1,0,None,"Calcium, Iron, Potassium, Magnesium",
+jaggery,Sweetener,383,0.4,0.1,98,0,None,"Iron, Calcium, Potassium, Magnesium, Phosphorus",gur
+palm jaggery,Sweetener,375,0.3,0.1,95,0,None,"Iron, Calcium, Potassium",palm sugar
+honey,Sweetener,304,0.3,0,82.4,0.2,"Vitamin C, Vitamin B6, Vitamin B2","Potassium, Calcium, Iron, Manganese",
+mishri,Sweetener,397,0,0,99.9,0,None,None,rock sugar or sugar candy
+saffron,Spice,310,11.4,5.9,65.4,3.9,"Vitamin C, Vitamin B2, Vitamin A","Manganese, Iron, Potassium, Magnesium",kesar
+dried rose petals,Spice,263,5,3.5,58,35,"Vitamin C, Vitamin A","Iron, Calcium, Potassium",gulab ki pankhudiyan
+kewra water,Spice,0,0,0,0.1,0,None,None,pandanus water - negligible nutrition
+rose water,Spice,0,0,0,0.1,0,None,None,gulab jal - negligible nutrition
+soy sauce,Sauce,53,8.1,0.1,4.9,0.8,"Vitamin B3, Vitamin B6","Iron, Sodium, Manganese, Potassium",
+schezwan sauce,Sauce,120,2,8,10,2,"Vitamin C, Vitamin A","Sodium, Potassium, Iron",schezwan chutney
+tomato ketchup,Sauce,112,1.3,0.4,26.9,0.9,"Vitamin C, Vitamin A, Vitamin K","Potassium, Sodium, Iron",
+green chilli sauce,Sauce,65,1.5,0.5,14,1.5,"Vitamin C, Vitamin A","Sodium, Potassium, Iron",
+hot sauce,Sauce,35,1.5,0.5,6,1,"Vitamin C, Vitamin A","Sodium, Potassium",
+mayonnaise,Sauce,680,1,75,0.6,0,"Vitamin E, Vitamin K","Sodium, Potassium",
+mustard sauce,Sauce,66,3.7,3.7,5.8,3.3,"Vitamin K, Vitamin C","Selenium, Sodium, Manganese",
+vinegar,Sauce,18,0,0,0.9,0,None,"Sodium, Potassium",
+oyster sauce,Sauce,51,0.8,0.3,11,0.1,Vitamin B12,"Sodium, Iron, Zinc",
+fish sauce,Sauce,35,5.1,0,3.6,0,"Vitamin B3, Vitamin B12","Sodium, Iron, Potassium",
+worcestershire sauce,Sauce,78,1.5,0.1,18.4,0,"Vitamin B3, Vitamin B6","Sodium, Iron, Potassium",
+coconut milk,Sauce,230,2.3,23.8,5.5,2.2,"Vitamin C, Vitamin B1","Iron, Manganese, Potassium, Phosphorus",thick coconut milk
+coconut milk thin,Sauce,52,1.1,4.6,2.8,0.3,Vitamin C,"Iron, Manganese, Potassium",thin coconut milk
+tamarind chutney,Sauce,195,1.5,0.3,49.5,3,"Vitamin C, Vitamin B1","Iron, Potassium, Calcium",imli chutney
+mint chutney,Sauce,37,2,0.5,7,3.5,"Vitamin C, Vitamin A, Vitamin K","Iron, Potassium, Calcium",pudina chutney
+coriander chutney,Sauce,38,2.1,0.5,7.2,2.8,"Vitamin C, Vitamin K, Vitamin A","Iron, Potassium, Calcium",dhania chutney
+peanut chutney,Sauce,320,12,24,20,4,"Vitamin E, Vitamin B3, Vitamin B6","Manganese, Phosphorus, Magnesium, Iron",
+coconut chutney,Sauce,200,2.5,15,15,4,"Vitamin C, Vitamin B1","Iron, Manganese, Potassium",nariyal chutney
+dried red chilli,Spice,282,13.5,12.9,49.7,34.9,"Vitamin A, Vitamin C, Vitamin B6","Iron, Potassium, Manganese",sukhi lal mirch
+curry powder,Spice,325,14.3,14,55.8,33.2,"Vitamin A, Vitamin C, Vitamin E","Iron, Manganese, Calcium, Magnesium",
+chaat masala,Spice,290,10,8,55,15,"Vitamin C, Vitamin A","Iron, Sodium, Manganese",
+pav bhaji masala,Spice,310,11,10,55,18,"Vitamin A, Vitamin C","Iron, Manganese, Calcium",
+sambar powder,Spice,280,12,9,52,20,"Vitamin A, Vitamin C","Iron, Manganese, Calcium",
+rasam powder,Spice,275,11,8,53,18,"Vitamin A, Vitamin C","Iron, Manganese",
+biryani masala,Spice,320,12,12,55,18,"Vitamin A, Vitamin C, Vitamin K","Iron, Manganese, Calcium",
+kashmiri red chilli,Spice,282,13.5,12.9,49.7,34.9,"Vitamin A, Vitamin C","Iron, Potassium, Manganese",mild red chilli for color
+dried fenugreek leaves,Spice,270,26.2,5.8,35.7,18,"Vitamin A, Vitamin C, Vitamin K","Iron, Calcium, Manganese, Magnesium",kasuri methi
+black cumin,Spice,381,17.8,22.3,44.2,10.5,"Vitamin B1, Vitamin E","Iron, Calcium, Manganese",shahi jeera or caraway seeds
+nigella seeds,Spice,375,16,21.2,52,38.2,"Vitamin B1, Vitamin B6","Iron, Calcium, Magnesium, Zinc",kalonji or onion seeds
+stone flower,Spice,270,5,3,60,10,Vitamin C,"Iron, Calcium",dagad phool or patthar phool
+idli,Processed Food,132,3.9,0.3,28,0.5,"Vitamin B1, Vitamin B2","Iron, Calcium, Phosphorus",steamed rice and lentil cake
+dosa,Processed Food,168,3.9,3.7,30,0.5,"Vitamin B1, Vitamin B2","Iron, Calcium, Phosphorus",rice and lentil crepe
+uttapam,Processed Food,132,3.7,2.1,24,0.9,"Vitamin B1, Vitamin B2","Iron, Calcium, Phosphorus",thick rice lentil pancake
+tea leaves,Beverage,1,0,0,0.2,0,None,"Fluoride, Manganese",brewed tea per cup
+coffee,Beverage,2,0.3,0,0,0,"Vitamin B3, Vitamin B5","Manganese, Potassium",brewed black coffee per cup
+raisins,Dry Fruit,299,3.1,0.5,79.2,3.7,"Vitamin C, Vitamin K, Vitamin B6","Iron, Potassium, Copper, Manganese",kishmish
+dried apricots,Dry Fruit,241,3.4,0.5,62.6,7.3,"Vitamin A, Vitamin C, Vitamin E","Iron, Potassium, Copper, Manganese",khumani
+dried figs,Dry Fruit,249,3.3,0.9,63.9,9.8,"Vitamin B6, Vitamin K, Vitamin B2","Calcium, Iron, Potassium, Magnesium",anjeer dry
+prunes,Dry Fruit,240,2.2,0.4,63.9,7.1,"Vitamin K, Vitamin A, Vitamin B6","Iron, Potassium, Copper, Manganese",sukha aloo bukhara
+dried cranberries,Dry Fruit,308,0.1,1.1,82.4,5.3,"Vitamin C, Vitamin E, Vitamin K","Manganese, Copper",
+dried dates,Dry Fruit,277,1.8,0.2,74.9,6.7,"Vitamin B6, Vitamin K, Vitamin B5","Potassium, Magnesium, Copper, Iron",chuara
+dried coconut,Dry Fruit,660,6.9,64.5,23.7,16.3,"Vitamin C, Vitamin B1","Manganese, Copper, Iron, Selenium",copra

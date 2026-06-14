@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  API
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
   <title>FoodLens AI — Smart Recipe Generator</title>
@@ -559,7 +560,9 @@
 /* ═══════════════════════════════════════════════════════════════
    STATE
 ═══════════════════════════════════════════════════════════════ */
-const API = 'http://localhost:8000';
+const API = window.location.hostname === 'localhost'
+  ? 'http://localhost:8000'
+  : 'https://food-lens-ai.onrender.com';
 let uploadedFile = null;
 let ingState     = {};    // name → bool
 let recipesData  = [];

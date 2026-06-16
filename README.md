@@ -3,6 +3,8 @@
 **Turn your fridge into gourmet.** Upload a photo of your ingredients, let AI identify what's in the frame, and get personalized recipes with a full nutritional breakdown — powered by Gemini Vision, Groq, and a LangGraph multi-agent pipeline.
 
 ---
+# SAMPLE--
+<video src="./demo.mp4" controls width="700"></video>
 
 ## ✨ Features
 

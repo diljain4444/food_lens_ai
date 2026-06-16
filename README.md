@@ -4,7 +4,7 @@
 
 ---
 # SAMPLE--
-<video src="./demo.mp4" controls width="700"></video>
+<video src="https://github.com/diljain4444/food_lens_ai/blob/main/demo.mp4" controls width="700"></video>
 
 ## ✨ Features
 
